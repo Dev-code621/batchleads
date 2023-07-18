@@ -1,0 +1,31 @@
+@import "~theme/configs/color";
+.opportunity-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 51px 0 84px 0;
+  border: 1px solid $gray-backgroud;
+  .description {
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
+    color: $dimgray-color;
+  }
+  .title {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $main-color;
+    margin-top: 43px;
+  }
+  .trial {
+    font-size: 19.5px;
+    line-height: 23px;
+    text-transform: uppercase;
+    color: $gray-color;
+    margin: 10px 10px;
+  }
+}

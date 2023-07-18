@@ -1,0 +1,29 @@
+@import "~theme/configs/color";
+
+.message-selector-trigger {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  img {
+    margin-right: 20px;
+  }
+  div {
+    span {
+      margin-right: 10px;
+      &.unread {
+        color: $blue-color;
+      }
+    }
+  }
+}
+
+.message-item-container {
+  span {
+    margin-right: 10px;
+    &.unread {
+      color: $blue-color;
+    }
+  }
+}

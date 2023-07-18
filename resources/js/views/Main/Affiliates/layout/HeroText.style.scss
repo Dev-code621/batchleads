@@ -1,0 +1,29 @@
+.hero-text-container {
+  background: #3683BC;
+  border-radius: 20px;
+  // width: 505px;
+  height: 105px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 100%;
+  font-family: Barlow;
+  font-style: normal;
+  font-size: 20px;
+  width: 505px;
+  @media (max-width: 375px) {
+    font-size: 15px;
+    width: 100%;
+  }
+  .black {
+    color: black;
+    opacity: .8;
+  }
+}
+
+.transparent-hero {
+  background: transparent;
+  color: #3683BC;
+}

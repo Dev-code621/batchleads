@@ -1,0 +1,16 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+.phone-number-item-container {
+  .phone-number-item {
+    display: flex;
+    flex-direction: row;
+    svg {
+      @include theme-aware('color', 'color-menu-text');
+    }
+    .list-item-title {
+      margin-left: 10px;
+      width: auto;
+      line-height: 20px;
+    }
+  }
+}

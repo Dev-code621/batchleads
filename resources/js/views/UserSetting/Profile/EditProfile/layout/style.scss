@@ -1,0 +1,10 @@
+@import "~theme/configs/color.scss";
+
+.profile-page {
+  height: calc(100% - 5px);
+  position: relative;
+  .button-container {
+    position: absolute;
+    bottom: 5px;
+  }
+}

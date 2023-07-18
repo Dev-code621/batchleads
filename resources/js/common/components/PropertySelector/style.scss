@@ -1,0 +1,19 @@
+@import "~theme/configs/color";
+
+.property-selector-container {
+  width: 100%;
+  .property-selector {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    .plus-icon {
+      color: $main-color;
+    }
+    .property-selector-label {
+      color: $main-color;
+      font-size: 15px;
+      margin-left: 15px;
+      font-weight: 600;
+    }
+  }
+}

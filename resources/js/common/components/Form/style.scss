@@ -1,0 +1,13 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color";
+
+.form {
+  font-size: 15px;
+  color: #646464;
+  @include theme-aware('color', 'color-searchbar');
+  .campaign-search-container {
+    width: 100%;
+    position: absolute;
+    top: 105px;
+  }
+}

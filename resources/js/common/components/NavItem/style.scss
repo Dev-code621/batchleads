@@ -1,0 +1,50 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color.scss";
+
+.nav-item-container {
+  outline: none;
+  cursor: pointer;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  @include theme-aware('background-color', 'color-site-background');
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  padding: 15px 15px;
+  min-width: $modalContentWidth;
+  width: 100%;
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: calc(100vw - 108px);
+    min-width: unset;
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    width: calc(100vw - 108px);
+    min-width: unset;
+  }
+  .nav-item-left {
+    width: 90%;
+    .nav-item-title {
+      font-size: 14px;
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.21;
+      letter-spacing: normal;
+      text-align: left;
+      @include theme-aware('color', 'color-site-text');
+    }
+    .nav-item-description {
+      font-size: 12px;
+      color: $gray-color;
+      margin-top: 5px;
+    }
+  }
+  .nav-item-right {
+    width: 5%;
+    svg {
+      @include theme-aware('color', 'color-menu-text');
+    }
+  }
+}

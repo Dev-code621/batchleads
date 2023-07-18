@@ -1,0 +1,105 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+@import "~theme/configs/variables";
+
+.compare-section {
+  padding: 0 rem(15) rem(30);
+  margin-top: rem(-60);
+
+  .container {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url('~assets/images/dots1.svg');
+      background-repeat: no-repeat;
+      background-position: center 60%;
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    .card {
+      max-width: 400px;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      z-index: 1;
+      padding: rem(35);
+
+      &__title {
+        font-size: rem(24);
+        font-weight: 600;
+        margin: rem(0) rem(30) rem(30);
+      }
+
+      ul {
+        padding-left: 0;
+
+        li {
+          list-style: none;
+          font-size: rem(16);
+          margin-bottom: 20px;
+          line-height: 1.3;
+        }
+      }
+
+      &--old_way {
+        &>ul {
+          li {
+            background-image: url('~assets/icons/sad_gray.svg');
+            background-repeat: no-repeat;
+            background-position: center left;
+            padding-left: rem(30);
+          }
+        }
+      }
+
+      &--new_way {
+        .card__title {
+          color: $main-color;
+        }
+
+        &>ul {
+          li {
+            background-image: url('~assets/icons/happy.svg');
+            background-repeat: no-repeat;
+            background-position: center left;
+            padding-left: rem(30);
+          }
+        }
+      }
+    }
+
+  }
+
+  @media (max-width: 767px) {
+    padding: rem(5) rem(10);
+
+    .container {
+      flex-direction: column;
+
+      .card {
+        margin: rem(15) auto;
+        max-width: 100%;
+        height: inherit;
+      }
+    }
+  }
+}
+
+
+
+
+.card {
+  color: $dimgray-color;
+  background-color: $white-color;
+  border: 1px solid #E4EAF0;
+  box-shadow: 0px 10px 20px rgba(69, 158, 255, 0.1);
+  font-style: rem(18);
+  padding: rem(20) rem(25);
+}

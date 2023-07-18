@@ -1,0 +1,156 @@
+@import "~theme/configs/color";
+
+.affiliate-landing-page {
+  &.super {
+    .affiliate-header-container{
+      text-align: center;
+    }
+    .workflow-section {
+      h3 {
+        font-size: rem(36);
+        text-align: center;
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 43px;
+        text-transform: uppercase;
+        color: $main-color;
+      }
+    }
+    .hero-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      top: -90px;
+      position: relative;
+      @media (max-width: 375px) {
+        margin-top: 0;
+      }
+      @media (max-width: 768px) {
+        margin-top: 0;
+        flex-direction: column-reverse;
+      }
+      &.row {
+        margin-left: auto;
+        margin-right: auto;
+        .right {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          @media (max-width: 768px) {
+            margin-top: 0;
+            flex-direction: column-reverse;
+            text-align: center;
+          }
+          .laptop {
+            width: 525px;
+            margin-left: 144px;
+            top: 245px;
+            position: relative;
+            @media (max-width: 1200px) {
+              top: 205px;
+            }
+            @media (max-width: 1024px) {
+              top: unset;
+            }
+            @media (max-width: 768px) {
+              width: 100%;
+              top: 40px;
+              margin-left: unset;
+              display: none;
+            }
+          }
+          .iphones {
+            width: 75px;
+            height: auto;
+            position: relative;
+            top: -150px;
+            left: 140px;
+            :nth-child(2){
+              top: -200px;
+              left: 66px;
+            }
+            :nth-child(3){
+              top: -400px;
+              left: 134px;
+            }
+            @media (max-width: 1024px) {
+              display: none;
+            }
+            @media (max-width: 375px) {
+              display: none;
+            }
+            img {
+              width: 75px;
+              height: auto;
+              position: relative;
+              @media (max-width: 1200px) {
+                width: 60px;
+              }
+              @media (max-width: 375px) {
+                width: 60px;
+              }
+            }
+          }
+        }
+        .left {
+          position: relative;
+          top: -40px;
+          height: 500px;
+          @media (max-width: 1200px) {
+            height: auto;
+            top: unset;
+          }
+          @media (max-width: 375px) {
+            top: 30px;
+          }
+          @media (max-width: 768px) {
+            top: 30px;
+          }
+          .hero-intro-container {
+            align-items: start;
+            .read {
+              text-align: left;
+              > span {
+                font-weight: bold;
+              }
+            }
+          }
+        }
+        .middle {
+          display: inline-block;
+          text-align: left;
+          max-width: 100px;
+          top: -50px;
+          position: relative;
+          @media (max-width: 768px) {
+            top: -30px;
+            text-align: right;
+            max-width: unset;
+            right: -16px;
+          }
+          .super {
+            position: relative;
+            width: 271px;
+            @media (max-width: 1024px) {
+              top: 0;
+            }
+            @media (max-width: 768px) {
+              top: 0;
+            }
+          }
+          .super-human {
+            position: relative;
+            top: -14px;
+            left: -70px;
+            @media (max-width: 768px) {
+              left: unset;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

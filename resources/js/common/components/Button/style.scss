@@ -1,0 +1,188 @@
+@import "~theme/configs/color";
+@import "~theme/configs/mixins";
+
+.btn {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-position: rem(16) center;
+  text-transform: uppercase;
+  &:hover {
+    filter: brightness(1.1);
+  }
+  transition: all .2s;
+}
+
+.btn-blue {
+  width: rem(201);
+  height: rem(48);
+  border-radius: rem(24);
+  box-shadow: 0 rem(3) rem(16) 0 rgba(2, 73, 138, 0.25);
+  background-color: $main-color;
+  color: $white-color;
+  font-size: rem(14);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.btn-white {
+  width: rem(201);
+  height: rem(48);
+  border-radius: rem(24);
+  box-shadow: 0 rem(3) rem(16) 0 rgba(2, 73, 138, 0.25);
+  color: $main-color;
+  @include theme-aware('color', 'color-map-button-main');
+  background-color: white;
+  @include theme-aware('background-color', 'color-site-background');
+  font-size: rem(14);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background-color: $main-color;
+    color: white;
+  }
+}
+.btn-gray {
+  width: rem(201);
+  height: rem(48);
+  border-radius: rem(24);
+  box-shadow: 0 rem(3) rem(16) 0 rgba(2, 73, 138, 0.25);
+  color: $white-color;
+  background-color: $gray-backgroud;
+  font-size: rem(14);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background-color: $main-color;
+  }
+}
+.btn-black {
+  width: rem(201);
+  height: rem(48);
+  border-radius: rem(24);
+  box-shadow: 0 rem(3) rem(16) 0 rgba(2, 73, 138, 0.25);
+  color: $white-color;
+  background-color: $gray-color-1;
+  font-size: rem(14);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  &:hover {
+    background-color: $main-color;
+  }
+}
+.btn-transparent {
+  width: rem(201);
+  height: rem(48);
+  border-radius: rem(24);
+  box-shadow: 0 rem(3) rem(16) 0 rgba(2, 73, 138, 0.25);
+  color: #454545;
+  background-color: white;
+  font-size: rem(14);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  &:hover {
+    opacity: .8;
+  }
+}
+// icon + text buttons
+.btn-plus {
+  background-image: url('~assets/icons/plus_white.svg');
+  background-repeat: no-repeat;
+  background-position: rem(14) center;
+  padding-left: rem(15);
+}
+.btn-cart {
+  background-image: url('~assets/icons/cart_white.svg');
+  background-repeat: no-repeat;
+  background-position: rem(14) center;
+  padding-left: rem(15);
+}
+// round & no-text buttons
+.btn-add--round {
+  width: 28px;
+  height: 28px;
+  background-color: $main-color;
+  border-radius: 28px;
+  background-image: url('~assets/icons/plus_white.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+  &:hover {
+    opacity: .9;
+  }
+}
+.btn-remove {
+  width: 22px;
+  height: 22px;
+  background-image: url('~assets/icons/remove.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  &:hover {
+    opacity: .9;
+  }
+
+  &--round {
+    width: 28px;
+    height: 28px;
+    background-color: $danger-color;
+    border-radius: 28px;
+    background-image: url('~assets/icons/remove_white.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  &--round_outline {
+    width: 35px;
+    height: 35px;
+    background-color: $gray-backgroud;
+    border-radius: 28px;
+    background-image: url('~assets/icons/remove_white_outline.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    &:hover {
+      background-color: $danger-color;
+    }
+  }
+}
+.btn-edit {
+  &--round_outline {
+    width: 35px;
+    height: 35px;
+    background-color: $gray-backgroud;
+    border-radius: 28px;
+    background-image: url('~assets/icons/edit_white_outline.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    &:hover {
+      background-color: $main-color;
+    }
+  }
+}
+.btn-star {
+  &--round_outline {
+    width: 35px;
+    height: 35px;
+    background-color: $gray-backgroud;
+    border-radius: 28px;
+    background-image: url('~assets/icons/star_white_outline.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    &:hover, &.active {
+      background-color: $main-color;
+    }
+  }
+}
+input[type="button"]:disabled {
+  background-color: $gray-backgroud;
+  color: white;
+}

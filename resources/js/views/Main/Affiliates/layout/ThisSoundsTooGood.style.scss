@@ -1,0 +1,49 @@
+@import "~theme/configs/color";
+.this-sounds-too-good-container {
+  padding: 50px 0 50px 0;
+  font-family: 'Barlow';
+  background: $light-blue-color-1;
+  .this-sounds-too-good {
+    &-title {
+      font-weight: 800;
+      font-size: 36px;
+      line-height: 56px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $main-color;
+      margin-bottom: 7px;
+    }
+    &-description {
+      font-size: 24px;
+      line-height: 56px;
+      text-align: center;
+      color: $dark-color;
+      span {
+        color: $main-color;
+      }
+    }
+    &-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      color: $yellow-color;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 43px;
+      margin-top: 37px;
+      @media (max-width: 375px) {
+        text-align: center;
+      }
+      .checkbox {
+        width: 61px;
+        height: 61px;
+        background: url('~assets/icons/check-light.svg');
+        margin-right: 35px;
+        @media (max-width: 375px) {
+          display: none;
+        }
+      }
+    }
+  }
+}

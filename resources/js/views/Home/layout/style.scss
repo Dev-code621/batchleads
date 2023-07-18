@@ -1,0 +1,42 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+
+.home-page {
+  .section-container {
+    margin-left: rem(10);
+    margin-right: rem(10);
+    @media (min-width: 481px) and (max-width: 767px) {
+      margin-top: rem(70);
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      margin-top: rem(70);
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      margin-top: rem(70);
+    }
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+      margin-top: rem(70);
+    }
+  }
+
+}
+#app-container {
+  &>aside {
+    border-radius: 50% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px !important;
+    height: 60px !important;
+    box-shadow: 0 3px 4px 0 rgba(0,0,0,.16);
+    cursor: pointer;
+    background-color: rgba($main-color, 0.5) !important;
+    &:hover {
+      background-color: rgba($main-color, 1) !important;
+    }
+    &>svg {
+      width: 50% !important;
+      height: 50% !important;
+    }
+  }
+}

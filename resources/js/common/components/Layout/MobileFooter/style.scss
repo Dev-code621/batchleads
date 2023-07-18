@@ -1,0 +1,83 @@
+@import "~theme/configs/color";
+@import "~theme/configs/mixins";
+
+.mobile-footer-container {
+  display: none;
+  @media (min-width: 481px) and (max-width: 767px) {
+    display: block;
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    display: block;
+  }
+  background-color: #1e293d;
+  padding-left: rem(20);
+  padding-right: rem(20);
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+  margin: 0 !important;
+  .item {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: rem(40);
+    &-item {
+      width: rem(150);
+      font-family: OpenSans;
+      font-size: rem(13);
+      line-height: rem(23);
+      color: #707070;
+    }
+  }
+  .menu-block {
+    display: flex;
+    flex-direction: column;
+    font-size: rem(16);
+    line-height: 3;
+    margin-top: rem(20);
+    a {
+      text-decoration: none;
+      color: $white-color;
+    }
+  }
+  .newsletter {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    &-title {
+      font-size: rem(22);
+      font-weight: bold;
+      line-height: 1.46;
+    }
+    &-description {
+      font-size: rem(16);
+      line-height: 1.63;
+      margin-top: rem(26);
+    }
+    .subscribe-button-container {
+      width: 100%;
+    }
+    .subscribe-button {
+      width: 100%;
+      height: rem(52);
+      border-radius: rem(24);
+      box-shadow: 0 rem(3) rem(16) 0 rgba(2, 73, 138, 0.25);
+      background-color: #0c7de3;
+      color: $white-color;
+      font-family: Arial;
+      font-size: rem(13);
+      font-weight: bold;
+      margin-top: rem(20);
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    .email-input {
+      margin-top: rem(30);
+    }
+  }
+}

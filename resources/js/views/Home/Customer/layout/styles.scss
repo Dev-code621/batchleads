@@ -1,0 +1,181 @@
+.customer-page {
+  .content {
+    padding-top: 84px;
+    form {
+      margin-top: 63px;
+      margin-bottom: 49px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      .bg-container {
+        position: absolute;
+        z-index: -1;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        .bg-1 {
+          background-image: url('~assets/images/dots2.svg');
+          background-repeat: no-repeat;
+          width: 208px;
+          height: 403px;
+          position: relative;
+          left: -120px;
+        }
+        .bg-2 {
+          background-image: url('~assets/images/line.svg');
+          background-repeat: no-repeat;
+          width: 6px;
+          height: 337px;
+        }
+        .bg-3 {
+          background-image: url('~assets/images/cloud-blue1.svg');
+          background-repeat: no-repeat;
+          width: 244px;
+          height: 546px;
+        }
+      }
+      .form-description {
+        width: 100%;
+        max-width: 544px;
+        font-size: 18px;
+        line-height: 30px;
+        text-align: justify;
+        color: #454545;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px 20px;
+        .input-component {
+          margin: 15px 0;
+          max-width: 426px;
+        }
+        .btn {
+          margin: 15px 0;
+        }
+        .text-area-component {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          textarea {
+            margin: 15px auto 32px auto;
+            max-width: 426px;
+          }
+        }
+      }
+    }
+    .title-container {
+      width: 100%;
+      height: 223px;
+      background-color: #F4FAFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      .title-content {
+        font-size: 64px;
+        line-height: 56px;
+        color: #3683BC;
+        text-transform: uppercase;
+        font-family: BebasNeue;
+        text-align: center;
+      }
+    }
+    .contents {
+      padding: 25px 50px;
+      color: #454545;
+      font-family: Barlow;
+      font-size: 18px;
+      line-height: 28px;
+      text-align: justify;
+      ol {
+        padding-left: 0;
+        list-style-position: inside;
+        &.normal {
+          padding-top: 10px;
+          padding-left: 20px;
+        }
+        li {
+          margin-bottom: 20px;
+          &::marker {
+            font-weight: bold;
+          }
+        }
+      }
+      ul {
+        li {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          &::marker {
+            font-weight: bold;
+          }
+        }
+      }
+      div {
+        &.center {
+          text-align: center;
+        }
+        &.bold {
+          font-weight: bold;
+        }
+        &.title {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          font-weight: bold;
+          margin-top: 33px;
+          margin-bottom: 33px;
+          font-size: 24px;
+          line-height: 28px;
+          &-left {
+            font-size: 22px;
+            line-height: 10px;
+            font-weight: bold;
+            margin-top: 24px;
+            margin-bottom: 24px;
+          }
+        }
+      }
+      table {
+        border-spacing: 0;
+        border-collapse: separate;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        tr {
+          &:first-child {
+            td {
+              border-top-width: 0;
+            }
+          }
+          &:last-of-type {
+            td {
+              border-bottom-width: 0;
+            }
+          }
+          td {
+            border: 2px solid rgba(54, 131, 188, .5);
+            border-top-width: 0;
+            -webkit-background-clip: padding-box;
+            background-clip: padding-box;
+            padding: 12px 39px;
+            &:first-child {
+              border-left-width: 0;
+              padding-left: 0;
+              padding-right: 10px;
+            }
+            &:last-of-type {
+              border-left-width: 0;
+              border-right-width: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

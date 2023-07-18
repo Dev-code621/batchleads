@@ -1,0 +1,15 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/variables.scss";
+
+.form-scroll-container {
+  height: calc(#{$modelContentHeight} - 130px);
+  overflow-y: auto;
+  width: calc(100% + #{$modalPaddingX * 2});
+  margin-left: -$modalPaddingX;
+  @media (min-width: 481px) and (max-width: 767px) {
+    height: calc(100vh - 100px);
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    height: calc(100vh - 100px);
+  }
+}

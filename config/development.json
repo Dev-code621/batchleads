@@ -1,0 +1,14 @@
+{
+  "env": "development",
+  "app": {
+    "description": "you can overwrite the default config",
+    "hello": "You are in local development mode",
+    "APP_URL": "http://localhost:8000",
+    "API_ENDPOINT_URL": "http://localhost:8000/api/",
+    "MAP_ACCESS_TOKEN": "pk.eyJ1IjoiZHJlYW1zb2Z0d2FyZSIsImEiOiJjazY3enY3MWYyMHg2M2ttbTg4cTUweXd3In0.uTGEsGZKu2mHBa_JqG0TLg",
+    "ONE_SIGNAL_APP_ID": "1a7c0e83-07ec-480f-9eac-aaba117d22f7",
+    "STRIPE_KEY": "pk_test_DALWwWoTxLv2jXlusR9QhRSz00MDuoTQKN",
+    "GTM_AUTH": "_mf7D9Gk-twndNW_Z2AvEQ",
+    "GTM_PREVIEW": "env-56"
+  }
+}

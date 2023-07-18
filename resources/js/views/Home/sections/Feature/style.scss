@@ -1,0 +1,231 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+@import "~theme/configs/variables";
+
+.feature-section {
+  position: relative;
+
+  .container {
+    color: $dimgray-color;
+    margin: rem(30) auto;
+
+    .slogan-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px;
+
+      & p {
+        text-align: center;
+        font-size: rem(36);
+        text-transform: uppercase;
+        font-family: BebasNeue;
+        font-weight: 600;
+        margin: 0;
+      }
+
+      & img {
+        margin-left: 15px;
+        margin-top: -15px;
+      }
+    }
+
+    &>h3 {
+      text-align: center;
+      font-weight: normal;
+      font-size: rem(30);
+      color: $main-color;
+      margin: rem(15) auto rem(80);
+      max-width: 530px;
+    }
+
+    .card {
+      width: fit-content;
+      margin-top: rem(20);
+      margin-bottom: rem(40);
+      padding-right: rem(35);
+      position: relative;
+      z-index: 1;
+
+      &__title {
+        font-size: rem(24);
+        font-weight: 600;
+        margin: rem(15) rem(100);
+        color: $main-color;
+      }
+
+      ul {
+        margin-left: rem(100);
+        padding: 0;
+
+        li {
+          position: relative;
+          list-style: none;
+          margin: rem(10) rem(30);
+
+          &::before {
+            content: '';
+            position: absolute;
+            width: rem(10);
+            height: rem(10);
+            border-radius: rem(10);
+            background-color: $main-color;
+            left: rem(-25);
+            top: rem(6);
+          }
+        }
+      }
+
+      &__arrow {
+        position: absolute;
+        right: rem(30);
+        bottom: rem(20);
+        width: rem(55);
+        height: rem(15);
+        background-image: url('~assets/images/arrow_long.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+
+
+      &--driving {
+        background-image: url('~assets/images/driving.svg');
+        background-repeat: no-repeat;
+        background-position: rem(30) center;
+      }
+
+      &--team {
+        background-image: url('~assets/images/team.svg');
+        background-repeat: no-repeat;
+        background-position: rem(30) center;
+        margin-left: 12.5%;
+      }
+
+      &--lookup {
+        background-image: url('~assets/images/lookup.svg');
+        background-repeat: no-repeat;
+        background-position: rem(30) center;
+        margin-left: 25%;
+      }
+
+      &--data_list {
+        background-image: url('~assets/images/data_list.svg');
+        background-repeat: no-repeat;
+        background-position: rem(30) center;
+        margin-left: 12.5%;
+      }
+
+      &--skip_tracing {
+        background-image: url('~assets/images/skip_tracing.svg');
+        background-repeat: no-repeat;
+        background-position: rem(30) center;
+      }
+
+
+      &--sms_campaign {
+        background-image: url('~assets/images/sms_campaign.svg');
+        background-repeat: no-repeat;
+        background-position: rem(30) center;
+        margin-left: 12.5%;
+      }
+
+
+      &--mail_campaign {
+        background-image: url('~assets/images/mail_campaign.svg');
+        background-repeat: no-repeat;
+        background-position: rem(30) center;
+        margin-left: 25%;
+      }
+
+
+      &--lead_management {
+        background-image: url('~assets/images/lead_management.svg');
+        background-repeat: no-repeat;
+        background-position: rem(30) center;
+        margin-left: 12.5%;
+      }
+
+
+      &--bulk_upload {
+        background-image: url('~assets/images/bulk_upload.svg');
+        background-repeat: no-repeat;
+        background-position: rem(30) center;
+      }
+
+
+
+    }
+  }
+
+  .back-decoration {
+    content: '';
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center left;
+    width: 250px;
+    height: 500px;
+    z-index: -1;
+
+    &--dots1 {
+      background-image: url('~assets/images/dots2.svg');
+      top: rem(550);
+      left: 0;
+    }
+
+    &--dots2 {
+      background-image: url('~assets/images/dots3.svg');
+      top: rem(1000);
+      right: 0;
+    }
+
+    &--cloud1 {
+      background-image: url('~assets/images/cloud_gray1.svg');
+      top: rem(100);
+      right: 0;
+    }
+
+    &--cloud2 {
+      background-image: url('~assets/images/cloud_gray2.svg');
+      top: rem(1500);
+      left: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .container {
+      margin: rem(15) auto;
+
+      h3 {
+        font-size: rem(25);
+        margin-bottom: rem(30);
+      }
+
+      .card {
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: rem(15) !important;
+        background-position: rem(10) rem(20);
+
+        &__title {
+          font-size: rem(20);
+          margin: rem(20) rem(10) rem(30) rem(70) !important;
+        }
+
+        ul {
+          margin-left: rem(70);
+
+          li {
+            margin-right: rem(10);
+            margin-left: rem(10);
+          }
+        }
+      }
+    }
+
+    .back-decoration {
+      display: none;
+    }
+  }
+}

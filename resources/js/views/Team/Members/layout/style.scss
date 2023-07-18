@@ -1,0 +1,25 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color";
+
+.team-page {
+  .collapsable-trigger-container {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .Collapsible__contentInner {
+    .user-info {
+      align-items: flex-start;
+      margin: 0;
+      padding: 10px 0;
+      .user-name {
+        font-size: 0.9em;
+        font-weight: 600;
+        @include theme-aware('color', 'color-site-text');
+      }
+      .user-email {
+        font-size: 0.9em;
+        color: $gray-color;
+      }
+    }
+  }
+}

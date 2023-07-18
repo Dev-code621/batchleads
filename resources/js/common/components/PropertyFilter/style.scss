@@ -1,0 +1,34 @@
+@import "~theme/configs/color.scss";
+@import "~theme/configs/mixins.scss";
+.property-filter-modal {
+  .tags-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    .tag-empty-text {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .react-datepicker-wrapper {
+    input[type=text] {
+      @include theme-aware('color', 'color-site-text');
+      @include theme-aware('background-color', 'color-site-background');
+    }
+  }
+  .react-datepicker {
+    @include theme-aware('background-color', 'color-site-background');
+    .react-datepicker__header  {
+      @include theme-aware('background-color', 'color-searchbar-bg');
+    }
+    .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name .react-datepicker__current-month {
+      @include theme-aware('color', 'color-site-text');
+    }
+    *::before, *::after {
+      @include theme-aware('background-color', 'color-site-background');
+    }
+  }
+}

@@ -1,0 +1,34 @@
+
+@import "~theme/configs/color.scss";
+
+.mail-signature-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  .form-scroll-container {
+    margin-left: 0;
+    .signature-info {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        right: 25px;
+        border-right: 3px solid $dark-border;
+        border-bottom: 3px solid $dark-border;
+        border-left: 3px solid transparent;
+        border-top: 3px solid transparent;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}
+.mail-signature-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .signature-info {
+    height: 30px;
+  }
+}

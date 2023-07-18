@@ -1,0 +1,29 @@
+@import "~theme/configs/color.scss";
+
+.campaign-status {
+  min-width: 26px;
+  min-height: 26px;
+  width: 26px;
+  height: 26px;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -4px;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  &.canceled-status {
+    background-color: $danger-color;
+    background-image: url('~assets/icons/close_white.svg');
+    background-position: 7px;
+  }
+  &.finished-status {
+    background-color: $main-color;
+    background-image: url('~assets/icons/check_white.svg');
+  }
+  &.progress-status {
+    background-color: $dark-border;
+    background-image: url('~assets/icons/busy_white.svg');
+  }
+}

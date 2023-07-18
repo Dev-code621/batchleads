@@ -1,0 +1,40 @@
+@import "~theme/configs/color";
+
+.affiliate-landing-page {
+  &.missing {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    .affiliate-header-container {
+      position: relative;
+      & img {
+        height: 8vh;
+        width: auto;
+        @media (max-width: 375px) {
+          width: 230px;
+          height: auto;
+          padding-bottom: 30px;
+        }
+      }
+    }
+    .machine {
+      img {
+        position: relative;
+        top: -40px;
+        max-height: 50vh;
+      }
+    }
+    .message{
+      position: relative;
+      font-family: Barlow;
+      font-style: normal;
+      font-size: 32px;
+      line-height: 43px;
+      color: $gray-color-1;
+    }
+    .scroll {
+      min-height: 20vh;
+      visibility: hidden;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+
+.add-payment-method-page {
+  .card-info-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    .card-cvc-container {
+      width: 45%;
+    }
+    .card-expiry-container {
+      width: 45%;
+    }
+  }
+  .error {
+    margin-top: 0.27778rem;
+    color: red;
+    font-size: 0.66667rem;
+  }
+}

@@ -1,0 +1,182 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color.scss";
+@import "~theme/configs/variables";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+div[role="button"] {
+  outline: none;
+}
+
+em {
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+.layout_content {
+  transition: all $menuAnimationSpeed ease-in;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 0;
+  overflow: auto;
+  min-height: 100vh;
+  z-index: -1;
+}
+
+@media (min-width: 200px) {
+  .layout_content {
+    width: calc(100% - #{$menuWidth});
+  }
+}
+
+@media (min-width: 992px) {
+  .layout_content {
+    width: calc(100% - #{$menuExpandWidth});
+  }
+}
+
+.toggle {
+  background: $main-color;
+}
+
+li.hover_none {
+  span:hover {
+    background: transparent;
+  }
+}
+
+.usr_profile {
+  align-items: center;
+  margin-top: 1rem;
+  display: flex;
+  color: white;
+}
+
+.layout.layout-active {
+  .layout_content {
+    width: calc(100% - #{$menuWidth});
+  }
+}
+
+/*Centered content css*/
+.toggled_modal {
+  position: absolute;
+  z-index: 3;
+  pointer-events: none;
+  >* {
+    pointer-events: auto;
+  }
+}
+
+.toggled_modal {
+  i {
+    background: transparent;
+    padding: 8px 10px;
+    border-radius: 50px;
+  }
+}
+
+// modal content scss
+#content-toggle {
+  @include theme-aware('color', 'color-map-button');
+  cursor: pointer;
+  outline: none;
+  @include theme-aware('background-color', 'color-map-button-bg');
+}
+
+#content-toggle {
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  @include theme-aware('background-color', 'color-map-button-bg');
+  padding: 10px 10px;
+  font-size: 2.5em;
+  border-radius: 2.5em;
+  margin-top: calc(#{$modelContainerTop} + 15px);
+  margin-left: 1rem;
+  outline: none;
+  overflow: hidden;
+}
+
+.cross-btn {
+  width: $modalContainertWidth + 10;
+  text-align: right;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  @media (min-width: 481px) and (max-width: 767px) {
+    display: none;
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    display: none;
+  }
+  .close-icon {
+    color: $white-color;
+    background-color: transparent;
+    position: absolute;
+    top: calc(#{$modelContainerTop} + 15px);
+    font-size: 2.5em;
+    width: rem(40);
+    height: rem(40);
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: $main-color;
+    border-radius: rem(40);
+    box-shadow: 5px 0px 5px rgba($main-color, 0.1);
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 23%;
+      right: 23%;
+      top: calc(50% - 1px);
+      border: 1px solid $white-color;
+      transform: rotate(45deg);
+    }
+
+    &::after{
+      content: '';
+      position: absolute;
+      left: 23%;
+      right: 23%;
+      top: calc(50% - 1px);
+      border: 1px solid $white-color;
+      transform: rotate(135deg);
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+
+  }
+  .cross-background {
+    position: absolute;
+    top: 6.4rem;
+    background-color: $main-bg-color;
+    width: 30px;
+    height: 30px;
+    left: $modalContainertWidth + 22;
+    border-radius: 2.5rem;
+  }
+}
+
+h4.modal-heading {
+  margin: 0;
+}
+
+.break-address {
+  word-break: break-all;
+}
+
+.loader-top {
+  top: 0;
+  height: 855px;
+}

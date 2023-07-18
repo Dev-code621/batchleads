@@ -1,0 +1,408 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+@import "~theme/configs/variables";
+
+.sidenav-container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: $menuWidth;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .overlay {
+    display: none;
+  }
+
+  .btn-scroll-up {
+    position: fixed;
+    top: $menuWidth;
+    left: 0;
+    width: $menuWidth;
+    height: $menuWidth / 2;
+    z-index: $menuZndex + 50;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-width: 7px;
+      border-style: solid;
+      border-color: transparent transparent $gray-color transparent;
+    }
+    &:hover {
+      &::after {
+        border-color: transparent transparent $main-color transparent;
+      }
+    }
+  }
+  .btn-scroll-down {
+    position: fixed;
+    bottom: $menuLogoutMargin * 0.65;
+    left: 0;
+    width: $menuWidth;
+    height: $menuLogoutMargin / 3;
+    z-index: $menuZndex + 50;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-width: 7px;
+      border-style: solid;
+      border-color: $gray-color transparent transparent transparent;
+    }
+    &:hover {
+      &::after {
+        border-color: $main-color transparent transparent transparent;
+      }
+    }
+  }
+  .sidenav {
+    width: $menuWidth;
+    @include theme-aware('background-color', 'color-background');
+    scroll-behavior: smooth;
+    .nav-icon-toggle {
+      text-align: center;
+      position: fixed;
+      bottom: 50px;
+      z-index: 101;
+      width: $menuWidth;
+      div{
+        z-index: 99;
+        height: $menuLogoutMargin / 5;
+        
+      }
+      
+        // .react-switch-bg {
+        //   height: 17px;
+        //   width: 40px;
+        // }
+        // .react-switch-handle {
+        //   height: 16px;
+        //   width: 16px;
+        // }
+    }
+    
+
+    &>ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    &__item {
+      position: relative;
+      display: inline-flex;
+      transition: all 0.3s ease-in;
+
+      .nav-icon {
+        width: $menuWidth;
+        height: $menuHeight;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: $menuZndex;
+        @include theme-aware('background-color', 'color-background-icon');
+        & > .nav-link  {
+          & > * {
+            max-width: $menuWidth * .6;
+            max-height: $menuHeight * .7;
+          }
+          & > svg {
+            zoom: $menuIconScale;
+            path {
+              @include theme-aware('fill', 'color-icon');
+              fill: $gray-color;
+            }
+            &.no-fill {
+              path {
+                @include theme-aware('stroke', 'color-icon');
+                fill: transparent;
+              }
+            }
+          }
+        }
+      }
+      .nav-text {
+        position: absolute;
+        padding-left: $menuWidth;
+        width: $menuExpandWidth;
+        height: $menuHeight;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: $menuZndex - 2;
+        left: $menuWidth - $menuExpandWidth;
+        transition: all $menuAnimationSpeed ease-in;
+        font-size: $menuFontSize;
+        .nav-link {
+          padding: 0 rem(18);
+          width: 100%;
+          &--has-submenu {
+            @include theme-aware('color', 'color-menu-text');
+            margin-bottom: rem(8);
+            position: relative;
+
+            &::after {
+              content: '';
+              position: absolute;
+              border-bottom: 2px solid $gray-backgroud;
+              border-left: 2px solid $gray-backgroud;
+              right: 0;
+              top: 8px;
+              width: 7px;
+              height: 7px;
+              transform: rotate(-45deg);
+              transition: all $menuAnimationSpeed ease-in;
+            }
+          }
+
+          &.active {
+            color: $main-color;
+            font-weight: 600;
+          }
+
+
+        }
+
+        .nav-link--group {
+          height: $menuWidth / 3;
+          overflow-y: hidden;
+          padding: 0 rem(18);
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          transition: all $menuAnimationSpeed ease-in;
+          .nav-link {
+            padding: rem(8)  rem(15);
+            transition: all $menuAnimationSpeed ease-in;
+          }
+        }
+      }
+
+      .nav-link {
+        @include theme-aware('color', 'color-menu-text');
+        position: relative;
+        cursor: pointer;
+        &:hover {
+          color: $main-color;
+
+        }
+
+        &>.badge {
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          background-color: $main-color;
+          color: $white-color;
+          font-size: rem(12);
+          padding: rem(3) rem(5);
+          min-width: rem(20);
+          text-align: center;
+          border-radius: rem(10);
+        }
+
+        &--ani {
+          width: $menuWidth * .6;
+          height: $menuWidth * .6;
+          border-radius: $menuWidth;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: all $menuAnimationSpeed ease-in;
+
+          &:hover {
+            background-color: rgba($main-color, 0.5);
+            & > svg {
+              path {
+                fill: $white-color;
+              }
+              &.no-fill {
+                path {
+                  stroke: $white-color;
+                  fill: transparent;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      &--logo {
+        position: fixed;
+        z-index: $menuZndex + 3;
+        top: 0;
+        .nav-icon {
+          @include theme-aware('background-color', 'color-background-icon-logo');
+        }
+        .nav-text {
+          @include theme-aware('background-color', 'color-background-text-logo');
+          .nav-link {
+            text-align: center;
+            padding: 0;
+            img {
+              max-height: $menuWidth * .5;
+            }
+          }
+        }
+      }
+
+      &--profile {
+        margin-top: $menuWidth;
+        .nav-icon {
+          .user-image {
+            height: $menuWidth * .7;
+            width: $menuWidth * .7;
+            border-radius: 50%;
+            background-size:cover;
+          }
+        }
+        .nav-text {
+          flex-direction: column;
+
+          .user-name {
+            font-size: rem(20);
+            font-weight: 600;
+          }
+          .user-email {
+            font-size: rem(12);
+            font-weight: 400;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+        }
+      }
+      &--logout {
+        margin-bottom: $menuLogoutMargin;
+      }
+
+      &--expand {
+        position: fixed;
+        bottom: 0;
+        z-index: $menuZndex + 1;
+        .nav-icon {
+          cursor: pointer;
+          img {
+            zoom: $menuIconScale;
+            transform: rotate(0deg);
+          }
+        }
+      }
+      
+      &.active {
+        .nav-link--ani {
+          @include theme-aware('background-color', 'color-select-icon-bg');
+          & > svg {
+            path {
+              @include theme-aware('fill', 'color-select-icon');
+            }
+            &.no-fill {
+              path {
+                @include theme-aware('stroke', 'color-select-icon');
+                fill: transparent;
+              }
+            }
+          }
+        }
+        .nav-link--has-submenu {
+          color: $main-color;
+          cursor: pointer;
+        }
+        &>.nav-text>.nav-link {
+          color: $main-color;
+        }
+      }
+    }
+
+
+
+    &::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: $menuWidth;
+      @include theme-aware('background-color', 'color-background-icon');
+      z-index: $menuZndex - 1;
+      box-shadow: 5px 0px 5px rgba(54, 131, 188, 0.1);
+    }
+
+    &::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: $menuWidth - $menuExpandWidth;
+      width: $menuExpandWidth;
+      @include theme-aware('background-color', 'color-background');
+      z-index: $menuZndex - 3;
+      transition: all $menuAnimationSpeed ease-in;
+    }
+  }
+
+  &.active {
+    width: $menuExpandWidth;
+    .overlay {
+      @media (max-width: 991px) {
+        display: flex;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba($main-color, 0.1);
+      }
+    }
+    .sidenav {
+      &__item.expand-submenu {
+        margin-bottom: $menuLogoutMargin;
+        .nav-link--group {
+          height: rem(120);
+          margin-top: rem(100);
+          .nav-link--has-submenu {
+            &::after {
+              transform: rotate(-225deg);
+            }
+          }
+        }
+      }
+
+
+      .nav-text {
+        left: 0;
+      }
+
+      &__item--expand {
+        .nav-icon {
+          img {
+            transform: rotate(180deg);
+          }
+        }
+      }
+
+      .nav-link--group {
+        .nav-link {
+          margin-top: 0;
+        }
+      }
+
+      &::after {
+        left: 0;
+        @media (max-width: 991px) {
+          box-shadow: 5px 0px 5px rgba(54, 131, 188, 0.1);
+        }
+      }
+    }
+  }
+}

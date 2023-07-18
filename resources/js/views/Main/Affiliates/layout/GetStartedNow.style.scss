@@ -1,0 +1,26 @@
+@import "~theme/configs/color";
+.get-started-now-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 41px 0 55px 0 ;
+  text-align: center;
+  background: $light-blue-color-1;
+  font-family: 'Barlow';
+  .offering {
+    font-size: 36px;
+    line-height: 43px;
+    text-align: center;
+    color: $dark-color;
+    margin-bottom: 7px;
+  }
+  .free-trial {
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $dark-color;
+    margin-bottom: 5px;
+  }
+}

@@ -1,0 +1,101 @@
+@import "~theme/configs/color";
+
+.affiliate-landing-page {
+  &.ttp {
+    .workflow-section {
+      h3 {
+        font-size: rem(36);
+        text-align: center;
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 43px;
+        text-transform: uppercase;
+        color: $main-color;
+      }
+    }
+    .hero-container {
+      &.row {
+        margin-left: auto;
+        margin-right: auto;
+        .right {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          @media (max-width: 1024px) {
+            margin-top: 0;
+          }
+          @media (max-width: 375px) {
+            margin-top: 0;
+          }
+          .top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .skip-traces-for {
+              width: 50%;
+              font-family: 'BebasNeue';
+              font-size: 50px;
+              line-height: 56px;
+              text-align: center;
+              color: $dark-color;
+              text-align: left;
+            }
+            .free-trial {
+              .free {
+                font-family: 'Barlow';
+                font-weight: 800;
+                font-size: 72px;
+                line-height: 56px;
+                text-align: center;
+                text-transform: uppercase;
+                color: #3683bc;
+                &::after {
+                  content: '';
+                  display: block;
+                  height: 3px;
+                  border: 3px solid #454545;
+                  margin: 13px 0 13px 0;
+                }
+              }
+              .trial {
+                font-family: 'Barlow';
+                font-weight: 600;
+                font-size: 19.5px;
+                line-height: 23px;
+                text-align: center;
+                text-transform: uppercase;
+                color: #3683bc;
+              }
+            }
+          }
+          .ttp {
+            width: 240px;
+          }
+          .laptop {
+            width: 350px;
+            @media (max-width: 375px) {
+              width: 100%;
+            }
+          }
+        }
+        .left {
+          text-align: center;
+          .hero-intro-container {
+            height: 50%;
+          }
+          @media (max-width: 375px) {
+            margin-bottom: 30px;
+          }
+          @media (max-width: 768px) {
+            margin-bottom: 30px;
+          }
+          .logo {
+            padding-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}

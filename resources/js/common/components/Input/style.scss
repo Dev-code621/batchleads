@@ -1,0 +1,128 @@
+@import "~theme/configs/color";
+@import "~theme/configs/mixins";
+
+.input-component {
+  width: 100%;
+  position: relative;
+
+  &--password {
+    &::before {
+      position: absolute;
+      content: '';
+      background-image: url('~assets/icons/password.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      width: rem(20);
+      height: rem(20);
+      left: rem(14);
+      top: calc(50% - #{rem(10)});
+    }
+    &.has-label {
+      &::before {
+        top: calc(50% - #{rem(10)} + #{rem(10)})
+      }
+    }
+    &.has-error {
+      &::before {
+        top: calc(50% - #{rem(10)} - #{rem(10)})
+      }
+
+      &>.show-text {
+        top: calc(50% - #{rem(22)}) !important;
+      }
+    }
+  }
+
+  &--email {
+    &::before {
+      position: absolute;
+      content: '';
+      background-image: url('~assets/icons/mail.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      width: rem(20);
+      height: rem(20);
+      left: rem(14);
+      top: calc(50% - #{rem(10)});
+    }
+    &.has-label {
+      &::before {
+        top: calc(50% - #{rem(10)} + #{rem(10)})
+      }
+    }
+    &.has-error {
+      &::before {
+        top: calc(50% - #{rem(10)} - #{rem(10)})
+      }
+    }
+  }
+
+  .label {
+    font-size: rem(12);
+    font-weight: 600;
+    line-height: 1.17;
+    color: $dark-border;
+    margin-bottom: rem(10);
+  }
+  input {
+    width: 100%;
+    height: rem(48);
+    border-radius: rem(26);
+    box-shadow: 0 rem(3) rem(10) 0 rgba(0, 0, 0, 0.08);
+    background-color: $white-color;
+    color: $dark-color;
+    @include theme-aware('color', 'color-site-text');
+    @include theme-aware('background-color', 'color-site-background');
+    font-size: rem(16);
+    border: none;
+    outline: none;
+    padding-left: rem(44);
+    padding-right: rem(25);
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: rem(18) center;
+    &:focus {
+      border: 1px solid $main-color;
+    }
+    &::placeholder {
+      color: $dark-border;
+      @include theme-aware('color', 'color-searchbar');
+      opacity: 0.5;
+    }
+  }
+  input.no-icon {
+    padding-left: rem(20);
+    padding-right: rem(20);
+  }
+  .error {
+    margin-top: rem(5);
+    color: red;
+    font-size: rem(12);
+  }
+  .show-text {
+    position: absolute;
+    cursor: pointer;
+    width: rem(24);
+    height: rem(24);
+    background-image: url('~assets/icons/eye.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    right: rem(12);
+    top: calc(50% - #{rem(12)});
+    &--visible {
+      &::after {
+        content: '✕';
+        color: $gray-color;
+        font-size: rem(16);
+        position: absolute;
+        right: rem(6);
+        top: rem(2);
+      }
+    }
+  }
+  &.has-label {
+    .show-text {
+      top: calc(50% - #{rem(10)} + #{rem(10)})
+    }
+  }
+}

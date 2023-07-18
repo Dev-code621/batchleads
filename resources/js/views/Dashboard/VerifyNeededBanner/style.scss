@@ -1,0 +1,22 @@
+@import "~theme/configs/color.scss";
+@import "~theme/configs/variables";
+
+.verify-needed-banner-container {
+  position: absolute;
+  bottom: 0;
+  left: $menuWidth;
+  height: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  background-color: $main-color;
+  opacity: .8;
+  width: calc(100% - #{$menuWidth});
+  font-size: 18px;
+  .resend-now-button {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}

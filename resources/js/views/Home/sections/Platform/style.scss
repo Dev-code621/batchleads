@@ -1,0 +1,81 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+@import "~theme/configs/variables";
+
+.platform-section {
+  padding: rem(30) rem(15) rem(30);
+  background-color: $light-blue-color;
+  padding: rem(40) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  h2 {
+    font-size: rem(55);
+    font-weight: normal;
+    margin: 0;
+  }
+
+  .button-container {
+    margin-top: rem(40);
+    display: flex;
+
+    .btn-download {
+      width: 170px;
+      height: 50px;
+      background-color: $main-color;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      border-radius: 54px;
+      margin: 0 25px;
+      color: $white-color;
+      font-size: rem(12);
+      padding-left: 55px;
+
+      &:hover {
+        filter: brightness(1.1);
+      }
+
+      span {
+        font-size: rem(16);
+      }
+
+      background-position: 20px center;
+      background-repeat: no-repeat;
+
+      &--ios {
+        background-image: url('~assets/images/ios.svg');
+      }
+
+      &--android {
+        background-image: url('~assets/images/android.svg');
+      }
+
+      &--web {
+        background-image: url('~assets/images/sign_up.svg');
+      }
+    }
+  }
+
+
+  @media (max-width: 767px) {
+    padding: rem(15) rem(10);
+
+    h2 {
+      font-size: rem(35);
+      text-align: center;
+    }
+
+    .button-container {
+      flex-direction: column;
+      margin-top: 15px;
+
+      .btn-download {
+        margin: 15px;
+      }
+    }
+  }
+}

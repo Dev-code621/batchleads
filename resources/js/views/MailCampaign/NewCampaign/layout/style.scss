@@ -1,0 +1,13 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color";
+@import "~theme/configs/variables";
+
+.new-campaign-form {
+  .form-scroll-container {
+    .repeat-step-switch-container {
+      flex-direction: row;
+      justify-content: space-between;
+      @include theme-aware('color', 'color-site-text');
+    }
+  }
+}

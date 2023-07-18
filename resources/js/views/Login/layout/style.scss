@@ -1,0 +1,143 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+
+// common part (signin/signup/forgot password)
+.sign-page {
+  margin: 0 !important;
+  background-color: $light-blue-color;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .panels-container {
+    max-width: 980px;
+    min-height: 595px;
+    width: 100%;
+    background-color: $white-color;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    padding: 0;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    margin: 1rem;
+
+    .left-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+
+      .login-form {
+        max-width: 270px;
+        width: 60%;
+        text-align: center;
+
+        @media (max-width: 767px) {
+          width: 100%;
+        }
+
+        .label-or {
+          color: $dark-color;
+          padding: 1rem;
+          font-size: 0.75rem;
+        }
+      }
+    }
+
+    .right-panel {
+      padding: 0;
+      min-height: 400px;
+      background-size: cover;
+      text-align: center;
+      background-position-y: center;
+      background-image: url("~assets/images/login-bg.jpg");
+
+      .right-content {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(212.51deg,
+            rgba(54, 131, 188, 0.96) 25.66%,
+            hsla(0, 0%, 64.7%, 0.61) 95.09%);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+
+        .logo-container {
+          padding: 0;
+          margin: 4.5rem 0 0;
+
+          @media (max-width: 767px) {
+            zoom: 0.8;
+          }
+
+          @media (max-width: 320px) {
+            zoom: 0.7;
+          }
+        }
+
+        .link-white {
+          font-size: 0.95rem;
+          color: $white-color;
+          margin-bottom: 1.8rem;
+          text-decoration: underline;
+
+          &:hover {
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+// for only login page
+.login-page {
+  .panels-container {
+    .left-panel {
+      .login-form {
+        .input-container {
+          .input-component {
+            margin: 2rem 0;
+
+            &:last-child {
+              margin-bottom: 0.2rem;
+            }
+          }
+        }
+
+        .fp-container {
+          width: 100%;
+          text-align: right;
+          margin: 0rem 0 0.7rem;
+
+          a {
+            font-size: 0.7rem;
+            color: $dark-color;
+            text-decoration: none;
+            white-space: nowrap;
+
+            &:hover {
+              color: $main-color;
+            }
+          }
+        }
+
+        .btn-container {
+          width: 100%;
+          margin-top: 1rem;
+        }
+
+        .tos-container {
+          label {
+            width: max-content;
+          }
+        }
+      }
+    }
+  }
+}

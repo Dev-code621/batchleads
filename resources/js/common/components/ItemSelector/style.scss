@@ -1,0 +1,44 @@
+@import "~theme/configs/color";
+
+.select-box {
+  z-index: 999;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 28px;
+  border: 2px solid $main-color;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba($main-color, 0.2);
+  }
+  &.checked {
+    background-color: $main-color;
+    border: none;
+    &::after {
+      content: '';
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url('~assets/icons/check_white.svg');
+      width: 28px;
+      height: 28px;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &--property {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    border: 1px solid $dark-border;
+    &.checked {
+      &::after {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

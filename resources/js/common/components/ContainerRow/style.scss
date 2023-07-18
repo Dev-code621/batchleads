@@ -1,0 +1,20 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+
+.content-row {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .content-title {
+    width: 100%;
+    font-size: rem(12);
+    font-weight: 600;
+    line-height: 1.17;
+    color: $gray-color;
+    margin-bottom: rem(10);
+  }
+}

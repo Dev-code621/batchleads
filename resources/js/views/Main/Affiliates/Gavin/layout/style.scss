@@ -1,0 +1,66 @@
+@import "~theme/configs/color";
+
+.affiliate-landing-page {
+  &.gavin {
+    .workflow-section {
+      h3 {
+        font-size: rem(36);
+        text-align: center;
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 43px;
+        text-transform: uppercase;
+        color: $main-color;
+      }
+    }
+    .hero-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      @media (max-width: 786px) {
+        flex-direction: column-reverse;
+      }
+      &.row {
+        margin-left: auto;
+        margin-right: auto;
+        .right {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          img {
+            width: 550px;
+            @media (max-width: 1024px) {
+              width: auto;
+            }
+            @media (max-width: 768px) {
+              max-width: 100vw;
+              width: auto;
+            }
+            @media (max-width: 375px) {
+              max-width: 100vw;
+              width: auto;
+            }
+          }
+          @media (max-width: 1024px) {
+            margin-top: 0;
+          }
+          @media (max-width: 375px) {
+            margin-top: 0;
+          }
+        }
+        .left {
+          @media (max-width: 1200px) {
+            .hero-intro-container .iphones img {
+              position: absolute;
+            }
+          }
+          @media (max-width: 768px) {
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
+}

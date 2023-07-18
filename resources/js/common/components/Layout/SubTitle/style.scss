@@ -1,0 +1,30 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+
+.sub-title-container {
+  .title {
+    font-size: rem(28);
+    font-weight: bold;
+    line-height: 1.36;
+    color: #2d2d2d;
+    @media (min-width: 481px) and (max-width: 767px) {
+      font-size: rem(25);
+      line-height: 1.2;
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      font-size: rem(25);
+      line-height: 1.2;
+    }
+  }
+
+  &--login {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    .title {
+      font-size: rem(18);
+      @include theme-aware('color', 'color-site-text');
+      font-weight: 400;
+    }
+  }
+
+}

@@ -1,0 +1,15 @@
+@import "~theme/configs/color";
+
+.get-started-now-button {
+  width: 231px;
+  height: 40px;
+  background: $yellow-color;
+  border: 1px solid #F2F2F2;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  &:hover {
+    opacity: .9;
+  }
+}

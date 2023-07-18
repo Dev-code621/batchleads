@@ -1,0 +1,31 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color";
+
+.date-selector-container {
+  width: 100%;
+  .date-selector {
+    cursor: pointer;
+    height: 48px;
+    border-radius: 16px;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    @include theme-aware('background-color', 'color-site-background');
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    .date-selector-label {
+      font-size: rem(12);
+      color: $dark-color;
+      @include theme-aware('color', 'color-site-text');
+    }
+    margin-bottom: 20px;
+  }
+  .error-message {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: red;
+    font-size: 12px;
+  }
+}

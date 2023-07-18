@@ -1,0 +1,109 @@
+@import "~theme/configs/color";
+
+.affiliate-landing-page {
+  &.jamil {
+    .workflow-section {
+      h3 {
+        font-size: rem(36);
+        text-align: center;
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 43px;
+        text-transform: uppercase;
+        color: $main-color;
+      }
+    }
+    .hero-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      margin-top: 80px;
+      @media (max-width: 375px) {
+        margin-top: 0;
+      }
+      @media (max-width: 768px) {
+        margin-top: 0;
+      }
+      &.row {
+        margin-left: auto;
+        margin-right: auto;
+        .left {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          .jamil {
+            width: 100%;
+            max-width: 568px;
+            position: relative;
+            top: -100px;
+            @media (max-width: 1024px) {
+              top: 0;
+            }
+            @media (max-width: 375px) {
+              top: 0;
+            }
+          }
+          .iphones {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+            position: relative;
+            top: -80px;
+            left: -60px;
+            @media (max-width: 1024px) {
+              display: none;
+            }
+            @media (max-width: 375px) {
+              display: none;
+            }
+            img {
+              width: 75px;
+              height: auto;
+              position: relative;
+              @media (max-width: 1200px) {
+                width: 60px;
+              }
+              @media (max-width: 375px) {
+                width: 60px;
+              }
+            }
+            .iphone {
+              &-1 {
+                top: 60px;
+              }
+              &-2 {
+                top: 30px;
+              }
+              &-3 {
+                top: 0;
+              }
+              &-4 {
+                top: -30px;
+              }
+              &-5 {
+                top: -60px;
+              }
+            }
+          }
+        }
+        .right {
+          position: relative;
+          top: -80px;
+          height: 500px;
+          @media (max-width: 1200px) {
+            height: auto;
+          }
+          @media (max-width: 375px) {
+            top: 30px;
+          }
+          @media (max-width: 992px) {
+            top: 30px;
+          }
+        }
+      }
+    }
+  }
+}

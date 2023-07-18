@@ -1,0 +1,23 @@
+@import "~theme/configs/color";
+
+.buy-page {
+  .credit-package {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .package {
+      &-price {
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+      }
+      &-amount {
+        font-weight: bold;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: $main-color;
+      }
+    }
+  }
+}

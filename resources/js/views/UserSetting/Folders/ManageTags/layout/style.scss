@@ -1,0 +1,88 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color.scss";
+
+.add-tag-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: $main-color;
+  justify-content: space-between;
+  margin: 5px 0 10px;
+  text-transform: uppercase;
+  .edit-wrapper {
+    margin-left: 0;
+    font-size: 16px;
+    color: $menu-text-color;
+    @include theme-aware('color', 'color-searchbar');
+  }
+  .edit-wrapper:hover {
+    color: $main-color;
+  }
+  .add-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  svg {
+    margin-right: 5px;
+  }
+  &.button {
+    justify-content: center !important;
+  }
+}
+
+.tag-row-item {
+  margin: 10px 20px 15px 20px;
+  height: 48px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 5px 20px;
+  .tag-row-item-container {
+    .property-status-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 0;
+      min-height: 40px;
+      width: 100%;
+      svg {
+        min-width: 16px;
+      }
+      .property-status-title {
+        display: flex;
+        align-items: center;
+        word-break: break-all;
+        overflow-wrap: break-all;
+      }
+      .icon-container {
+        margin-left: 10px;
+        height: auto;
+      }
+      .property-status-selected {
+        color: $main-color;
+        font-weight: bold;
+        word-break: break-all;
+        overflow-wrap: break-all;
+      }
+      &.tag-edit-item {
+        input:focus {
+          outline: none;
+        }
+        .tag-edit-input {
+          flex: 1;
+          margin-left: 10px;
+          padding-right: 5px;
+          font-size: 16px;
+          @include theme-aware('color', 'color-site-text');
+          @include theme-aware('background-color', 'color-site-background');
+          border: none;
+          &.selected {
+            margin-left: 0;
+            border: solid 1px $dark-border;
+            border-radius: 20px;
+            padding: 4px 3px 5px 10px;
+          }
+        }
+      }
+    }
+  }
+}

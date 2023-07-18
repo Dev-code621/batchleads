@@ -1,0 +1,86 @@
+@import "~theme/configs/color";
+@import "~theme/configs/mixins";
+
+.footer-container {
+  @media (min-width: 481px) and (max-width: 767px) {
+    display: none;
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    display: none;
+  }
+  background-color: #1e293d;
+  height: rem(546);
+  padding-top: rem(129);
+  margin: 0 !important;
+  .item {
+    height: rem(295);
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-item {
+      width: rem(150);
+      font-family: OpenSans;
+      font-size: rem(13);
+      line-height: rem(23);
+      color: #707070;
+    }
+  }
+  .menu-block {
+    display: flex;
+    flex-direction: column;
+    font-size: rem(16);
+    line-height: 3;
+    a {
+      text-decoration: none;
+      color: $white-color;
+    }
+  }
+  .newsletter {
+    .input-component {
+      @media (min-width: 768px) and (max-width: 1024px) {
+        width: rem(200) !important;
+      }
+      @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+        width: rem(200) !important;
+      }
+    }
+    &-title {
+      font-size: rem(26);
+      font-weight: bold;
+      line-height: 1.46;
+    }
+    &-description {
+      font-size: rem(16);
+      line-height: 1.63;
+      margin-top: rem(26);
+    }
+    .subscribe-button {
+      width: rem(201);
+      height: rem(52);
+      border-radius: rem(24);
+      box-shadow: 0 rem(3) rem(16) 0 rgba(2, 73, 138, 0.25);
+      background-color: #0c7de3;
+      color: $white-color;
+      font-family: Arial;
+      font-size: rem(13);
+      font-weight: bold;
+      margin-top: rem(20);
+      border: none;
+      outline: none;
+      cursor: pointer;
+      @media (min-width: 768px) and (max-width: 1024px) {
+        width: rem(150);
+      }
+      @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+        width: rem(150);
+      }
+    }
+    .email-input {
+      margin-top: rem(30);
+    }
+  }
+}

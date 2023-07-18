@@ -1,0 +1,129 @@
+@import "~theme/configs/color";
+
+.affiliate-landing-page {
+  &.titanium {
+    .workflow-section {
+      h3 {
+        font-size: rem(36);
+        text-align: center;
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 43px;
+        text-transform: uppercase;
+        color: $main-color;
+      }
+    }
+    .hero-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      margin-top: -40px;
+      &.row {
+        margin-left: auto;
+        margin-right: auto;
+        .left {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+          .iphones {
+            @media (max-width: 1200px) {
+              display: none;
+            }
+            img {
+              width: 140px;
+              position: relative;
+            }
+            .iphone-1 {
+              left: 50px;
+              top: 100px;
+              z-index: 99;
+            }
+          }
+          .heros {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            .hero-text-container {
+              left: 50px;
+              position: relative;
+              @media (max-width: 1024px) {
+                left: 0px;
+              }
+              @media (max-width: 768px) {
+                width: 100%;
+              }
+            }
+            .titanium {
+              @media (max-width: 375px) {
+                width: 100%;
+              }
+            }
+          }
+          img {
+            width: auto;
+          }
+          @media (max-width: 1024px) {
+            margin-top: 0;
+          }
+          @media (max-width: 375px) {
+            margin-top: 0;
+          }
+        }
+        .right {
+          @media (max-width: 375px) {
+            margin-bottom: 30px;
+          }
+          @media (max-width: 768px) {
+            margin-bottom: 30px;
+          }
+          .hero-intro-container {
+            .laptop {
+              position: relative;
+              left: -60px;
+              width: auto;
+              padding-top: 60px;
+              @media (max-width: 1024px) {
+                left: 0px;
+                padding-top: 20px;
+              }
+              @media (max-width: 768px) {
+                width: 100%;
+              }
+            }
+            .read {
+              display: none;
+            }
+            .bottom {
+              position: relative;
+              top: -60px;
+              left: 80px;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              @media (max-width: 1024px) {
+                left: 0px;
+                top: 20px;
+                flex-direction: column;
+                div {
+                  margin-top: 10px;
+                }
+              }
+              div {
+                margin-left: 10px;
+                margin-right: 10px;
+              }
+              .secure-check-out-container {
+                margin-top: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

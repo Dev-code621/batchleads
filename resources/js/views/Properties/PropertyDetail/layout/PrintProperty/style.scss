@@ -1,0 +1,274 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+
+.property-print {
+  color: $dark-color;
+  font-family: Barlow;
+  font-style: normal;
+  width: 100%;
+  top:0px;
+  position: absolute;
+  background-color: white;
+  padding: 20px;
+  display: block;
+  .left {
+    float: left;
+    width: 47%;
+  }
+  .right{
+    float: right;
+    width: 47%;
+  }
+  .header {
+    font-size: 18px;
+    width: 100%;
+    line-height: 28px;
+    display: block;
+    .title {
+      font-weight: bold;
+    }
+    .right {
+      text-align: right;
+    }
+  }
+  .detail-title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    padding-bottom: 15px;
+  }
+  .property-info-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 13px;
+    line-height: 18px;
+    &.contact {
+      align-items: left;
+    }
+    .title-label {
+      width: 38%;
+      text-align: right;
+      &.contact {
+        width: 20%;
+        text-align: left;
+        font-weight: 600;
+        svg {
+          margin-top: 3px;
+          height: 10px;
+        }
+        img {
+          margin-top: 5px;
+          height: 10px;
+        }
+      }
+    }
+    .value-label {
+      margin-left: 15px;
+      max-width: 52%;
+      font-weight: bold;
+
+      &.contact {
+        width: 90%;
+        font-weight: normal;
+      }
+    }
+  }
+  .details {
+    width: 100%;
+    display: block;
+    min-height: 100%;
+    .detail-wrapper {
+        display: flexbox;
+        min-height: 100%;
+    }
+    .property-image {
+      min-height: 200px;
+      width: auto;
+      img {
+        max-height: 200px;
+        border-radius: 10px;
+      }
+    }
+    .property-map-container {
+      height: 200px;
+      overflow: hidden;
+      margin-left: -18px;
+      width: calc(100% + 36px);
+    }
+  }
+  .owner {
+    font-size: 12px;
+    line-height: 14px;
+    width: 100%;
+    display: block;
+    .left {
+      display: inline-block;
+      text-align: left;
+      .ownership {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        .property-info-wrapper {
+          display: block;
+          width: 50%;
+          min-width: 50%;
+          padding-bottom: 10px;
+          .title-label {
+            text-align: left;
+            width: 100%;
+            font-weight: bold;
+            max-width: unset;
+          }
+          .value-label {
+            margin-left: unset;
+            font-weight: normal;
+            width: 100%;
+            max-width: unset;
+            text-transform: uppercase;
+          }
+        }
+      }
+
+    }
+    .right {
+      border-left: 1px solid black;
+      padding-left: 10px;
+      display: inline-block;
+    }
+  }
+  .block {
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding-top: 10px;
+    font-size: 12px;
+    line-height: 14px;
+    display: block;
+    .property-info-wrapper {
+      display: inline-block;
+      padding-bottom: 10px;
+      .title-label {
+        text-align: left;
+        font-weight: bold;
+        max-width: unset;
+      }
+      .value-label {
+        margin-left: unset;
+        max-width: unset;
+        font-weight: normal;
+      }
+    }
+    .details {
+      display: flex;
+      width: 100%;
+      flex-wrap: wrap;
+      .property-info-wrapper {
+        display: block;
+        width: 25%;
+        min-width: 25%;
+        padding-bottom: 10px;
+        .title-label {
+          text-align: left;
+          width: 100%;
+          font-weight: bold;
+          max-width: unset;
+        }
+        .value-label {
+          margin-left: unset;
+          font-weight: normal;
+          width: 100%;
+          max-width: unset;
+        }
+      }
+    }
+  }
+  .campaign {
+    width: 100%;
+    display: block;
+    .total-campaign {
+      display: flex;
+      div{
+        margin-right: 15px;
+      }
+      .total {
+        font-size: 30px;
+        line-height: 107%;
+      }
+      .campaign-list {
+        display:block;
+        font-weight: normal;
+      }
+    }
+    .tags {
+      display: flex;
+      border-left: 1px solid black;
+      padding-left: 15px;
+      margin-left: -15px;
+      div{
+        margin-right: 15px;
+      }
+      .total {
+        font-size: 30px;
+        line-height: 107%;
+      }
+      .tag-list {
+        display:block;
+        font-weight: normal;
+      }
+    }
+  }
+  .tax {
+    .details {
+      .property-info-wrapper {
+        width: 33%;
+        min-width: 33%;
+      }
+    }
+  }
+  .additional {
+    width: 100%;
+    display: none;
+  }
+  .mortgage {
+    width: 100%;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    display: block;
+    table {
+      width: 100%;
+      font-size: 10px;
+      line-height: 12px;
+      th {
+        border-bottom: 1px solid $dark-color;
+        font-weight: normal;
+        padding-bottom: 8px;
+        text-align: left;
+      }
+      td {
+        padding: 15px 5px;
+        .bold {
+          font-weight: bold;
+        }
+        span {
+          font-weight: normal;
+          display: block;
+        }
+      }
+    }
+    div {
+      padding-top: 10px;
+    }
+    .value {
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 20px;
+      margin-left: 15px;
+    }
+  }
+  .transactions {
+    width: 100%;
+  }
+}

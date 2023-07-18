@@ -1,0 +1,21 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color";
+
+.tos-container {
+  .custom-check {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    cursor: pointer;
+    color: $dark-color;
+    @include theme-aware('color', 'color-site-text');
+    font-size: 0.75rem;
+    a {
+      font-weight: 600;
+      color: $main-color;
+      text-decoration: underline;
+      white-space: nowrap;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import "~theme/configs/color";
+
+.campaign-current-status {
+  color: white !important;
+  text-transform: uppercase;
+  font-size: 11px;
+  padding: 5px 5px;
+  min-width: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  border-radius: 50px;
+  font-weight: normal;
+}
+.status-canceled {
+  background-color: $danger-color;
+}
+.status-finished {
+  background-color: $main-color;
+}
+.status-in-progress {
+  background-color: $success-color;
+}

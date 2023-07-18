@@ -1,0 +1,22 @@
+@import "~theme/configs/color";
+
+.property-tag-item-container {
+  padding: 0px 6px 2px 6px;
+  background-color: $gray-light;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  margin-right: 2px;
+  margin-bottom: 4px;
+  height: 18px;
+  cursor: pointer;
+  &.selected {
+    background-color: $main-color;
+  }
+  .tag-text {
+    color: $white-color;
+    font-size: 12px;
+  }
+}

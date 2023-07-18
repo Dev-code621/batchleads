@@ -1,0 +1,74 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+
+.title-container {
+  .title {
+    font-size: rem(37);
+    font-weight: bold;
+    line-height: 1.27;
+    color: #2d2d2d;
+    @media (min-width: 481px) and (max-width: 767px) {
+      font-size: rem(30);
+      line-height: 1.2;
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      font-size: rem(30);
+      line-height: 1.2;
+    }
+  }
+  .description {
+    font-size: rem(22);
+    font-weight: 300;
+    line-height: 1.45;
+    color: #646464;
+    margin-top: rem(26);
+    text-align: center;
+  }
+
+  &--login {
+    .title {
+      font-weight: 600;
+      font-size: 1.3rem;
+      line-height: 2.3rem;
+      color: $main-color;
+      margin: 0;
+    }
+    .description {
+      font-size: .85rem;
+      line-height: 1.2rem;
+      @include theme-aware('color', 'color-site-text');
+      margin: 0;
+    }
+  }
+
+  &--slogan {
+    .title {
+      font-family: BebasNeue;
+      font-weight: 400;
+      font-size: 3rem;
+      margin: 0;
+      padding: 0 1rem;
+      color: $white-color;
+      @media (max-width: 767px) {
+        font-size: 2.5rem;
+      }
+    }
+    .description {
+      font-size: 1.2rem;
+      margin: 0;
+      color: $white-color;
+      @media (max-width: 767px) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &--blue {
+    .title {
+      font-weight: 600;
+      font-size: rem(20);
+      color: $main-color;
+    }
+  }
+
+}

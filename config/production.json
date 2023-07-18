@@ -1,0 +1,11 @@
+{
+  "env": "production",
+  "publicPath": "/",
+  "app": {
+    "APP_URL": "https://batchdriven.com",
+    "API_ENDPOINT_URL": "https://batchdriven.com/api/",
+    "MAP_ACCESS_TOKEN":"pk.eyJ1IjoiZHJlYW1zb2Z0d2FyZSIsImEiOiJjazY3enY3MWYyMHg2M2ttbTg4cTUweXd3In0.uTGEsGZKu2mHBa_JqG0TLg",
+    "ONE_SIGNAL_APP_ID": "98ea4f22-0b95-4ee3-ba53-a29636add02c",
+    "STRIPE_KEY": "pk_live_X99zfD84c9dyWbBoXof3tkuW00OWiSD4Ir"
+  }
+}

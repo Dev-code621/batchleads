@@ -1,0 +1,11 @@
+@import "~theme/configs/color";
+.full-screen-container {
+  background-color: $full-screen-container-bg;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  padding: 20px 20px;
+  min-height: 100vh;
+}

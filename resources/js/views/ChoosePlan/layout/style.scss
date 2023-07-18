@@ -1,0 +1,283 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+
+.choose-plan-page {
+  color: $dimgray-color;
+  .input-container {
+    width: rem(590);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    .input-component {
+      margin-bottom: rem(30);
+    }
+    .plan-selector-container {
+      max-width: rem(964);
+      width: 100%;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+    }
+    .addon-container {
+      position: relative;
+      width: 100%;
+      // max-width: 800px;
+      margin-top: 10px;
+      .addon-title {
+        position: relative;
+        margin: 10px 0 10px 40%;
+        @include theme-aware('color', 'color-site-text');
+        text-align: center;
+        .blue-text {
+          color: $main-color;
+          margin: 0 5px;
+        }
+        .small {
+          position: absolute;
+          font-size: rem(12);
+          top: 2px;
+        }
+      }
+      .plan-details-container {
+        margin-top: 5px;
+        @include theme-aware('color', 'color-site-text');
+        .plan-details-item {
+          height: 60px;
+          .plan-details-item-description {
+            width: 40%;
+            padding: 5px;
+            float: left;
+            .addon-checkbox {
+              box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+              border-radius: 10px;
+              font-size: rem(12);
+              font-weight: 600;
+              padding: rem(10) rem(15) rem(10) rem(50);
+              width: 70%;
+              position: relative;
+              min-height: rem(44);
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              cursor: pointer;
+              span {
+                font-size: rem(18);
+                display: none;
+              }
+              &:hover {
+                opacity: 0.8;
+              }
+              &::before {
+                position: absolute;
+                content: '';
+                width: 11px;
+                height: 11px;
+                background-color: $gray-backgroud;
+                left: 15px;
+                top: calc(50% - 6px);
+              }
+              &.checked {
+                background-color: $main-color;
+                color: white;
+                &::after {
+                  content: '';
+                  position: absolute;
+                  background-image: url('~assets/icons/check_white.svg');
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  width: 22px;
+                  height: 22px;
+                  left: 11px;
+                  top: calc(50% - 15px);
+                }
+              }
+              &.disabled {
+                background-color: $gray-backgroud;
+                &::before {
+                  background-color: $dark-border;
+                }
+              }
+            }
+          }
+          .plan-details-item-detail {
+            width: 60%;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .plan-details-item-detail-cell {
+              padding: 5px !important;
+              width: 100%;
+              .addon-item {
+                text-align: center;
+                padding: 10px;
+                width: 100%;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                cursor: pointer;
+                font-size: rem(18);
+                &:hover {
+                  opacity: 0.8;
+                }
+                &.active {
+                  background-color: $main-color;
+                  color: white;
+                  font-weight: 600;
+                  font-size: rem(20);
+                }
+              }
+            }
+          }
+        }
+      }
+      @media (max-width: 767px) {
+        .addon-title {
+          margin: 10px 0;
+        }
+        .plan-details-container  {
+          display: block;
+          max-width: 580px;
+          margin: 10px auto;
+          .plan-details-item-description {
+            width: 100% !important;
+            margin-bottom: 15px;
+            .addon-checkbox {
+              width: 100%;
+              span {
+                display: block;
+              }
+            }
+          }
+          .plan-details-item-detail {
+            display: none !important;
+          }
+        }
+      }
+      @media (max-width: 375px) {
+        .addon-title {
+          margin: 10px 0;
+        }
+        .plan-details-container  {
+          display: block;
+          max-width: 580px;
+          margin: 10px auto;
+          .plan-details-item-description {
+            width: 100% !important;
+            margin-bottom: 15px;
+            .addon-checkbox {
+              width: 100% !important;
+              span {
+                display: block;
+              }
+            }
+          }
+          .plan-details-item-detail {
+            display: none !important;
+          }
+        }
+      }
+    }
+    .summary-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      .note-container {
+        color: $gray-color;
+        width: 35%;
+        font-weight: 600;
+        span {
+          color: $main-color;
+          margin-left: 5px;
+        }
+      }
+      .price-container {
+        @include theme-aware('color', 'color-site-text');
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        span {
+          color: $main-color;
+          font-weight: 600;
+          font-size: rem(30);
+          margin-left: 10px;
+        }
+      }
+      .button-container {
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .btn {
+          min-width: 200px !important;
+          margin: 10px auto;
+        }
+        .continue-link {
+          @include theme-aware('color', 'color-site-text');
+          font-size: rem(13);
+          cursor: pointer;
+          margin: 10px auto;
+          text-decoration: underline;
+          &:hover {
+            color: $main-color;
+          }
+        }
+      }
+      @media (max-width: 767px) {
+        flex-direction: column;
+        .note-container {
+          text-align: center;
+          margin: 10px auto;
+          width: 100%;
+        }
+        .price-container {
+          margin-bottom: 15px;
+          width: 100%;
+        }
+        .button-container {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .plan-period-toggle-container {
+    position: absolute;
+    top: 70px;
+    left: 0px;
+    z-index: 2;
+    @media (max-width: 767px) {
+      top: 80px;
+    }
+    @media (max-width: 535px) {
+      position: unset;
+      top: 100px;
+    }
+    .plan-period-toggle {
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      border-radius: 50px;
+      overflow: hidden;
+      width: fit-content;
+      .btn-period {
+        @include theme-aware('color', 'color-site-text');
+        padding: 10px;
+        width: 70px;
+        font-size: rem(16);
+        text-align: center;
+        cursor: pointer;
+        transition: all .2s;
+        &.active {
+          background-color: $main-color;
+          color: white !important;
+        }
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}

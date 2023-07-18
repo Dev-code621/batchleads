@@ -1,0 +1,16 @@
+@import "~theme/configs/color";
+
+.notifications-page {
+    .list-item {
+        margin-bottom: 15px;
+        padding-right: 10px;
+        .description-item {
+            color: $gray-color;
+            margin-top: 3px;
+            width: calc(100% - 35px);
+            font-size: 14px;
+            padding-bottom: 5px;
+        }
+    }
+
+}

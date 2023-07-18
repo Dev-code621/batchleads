@@ -1,0 +1,83 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color.scss";
+
+.mail-templates-page {
+  .mail-templates-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.mail-template-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  .form-scroll-container {
+    height: calc(#{$modelContentHeight} - 160px);
+  }
+  .mail-template-infinite-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .template-info {
+      width: ($modalContentWidth - 10)/2;
+      height: ($modalContentWidth - 10)/2;
+      @media (min-width: 481px) and (max-width: 767px) {
+        width: calc((100vw - 120px) / 2);
+        height: calc((100vw - 120px) / 2);
+      }
+      @media (min-width: 320px) and (max-width: 480px) {
+        width: calc((100vw - 120px) / 2);
+        height: calc((100vw - 120px) / 2);
+      }
+      outline: none;
+      cursor: pointer;
+      border-radius: 16px;
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+      background-color: #ffffff;
+      @include theme-aware('background-color', 'color-site-background');
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      margin: 7px 5px;
+      img {
+        width: 100%;
+        height: 70%;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+      }
+      .template-detail {
+        padding: 10px 15px;
+        font-size: 0.8em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .template-name {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: ($modalContentWidth/2 - 10) * 0.7;
+          font-size: rem(14);
+          @include theme-aware('color', 'color-site-text');
+          line-height: 1.2;
+        }
+        .template-style-name {
+          @include theme-aware('color', 'color-site-text');
+          font-size: rem(12);
+
+        }
+      }
+    }
+  }
+  .loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}

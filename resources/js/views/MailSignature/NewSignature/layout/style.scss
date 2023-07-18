@@ -1,0 +1,18 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color.scss";
+@import "~theme/configs/variables.scss";
+
+.new-signature-form {
+  .form-scroll-container {
+    width: 100%;
+    margin-left: 0;
+    height: calc(#{$modelContentHeight} - 176px);
+
+    .legend-label {
+      width: 100%;
+      margin-top: 10px;
+      @include theme-aware('color', 'color-site-text');
+      font-weight: 400;
+    }
+  }
+}

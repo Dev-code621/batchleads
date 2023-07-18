@@ -1,0 +1,50 @@
+{
+  "env": "default",
+  "host": "127.0.0.1",
+  "port": "8080",
+  "publicPath": "/",
+  "assetPath": "assets",
+  "jsSourcePath": "resources/js",
+  "optimization": {
+    "analyzeMode": false,
+    "analyze": {
+      "port": 8888
+    }
+  },
+  "browserSync": {
+    "active": true,
+    "port": 3002
+  },
+  "html": [
+    {
+			"name": "homepage",
+      "title": "BatchDriven",
+      "template": "app.blade.template.php",
+      "filename": "app.blade.php"
+    },
+    {
+			"name": "homepage",
+      "title": "BatchDriven",
+      "template": "_default.html",
+      "filename": "index.html"
+    }
+  ],
+  "app": {
+    "APP_NAME": "BatchDriven",
+    "description": "config inside 'app' will be injected to your frontend code automatically",
+    "GOOGLE_MAP_API_KEY": "AIzaSyBDA4sXThoEB_2AxrfQHOyWX6IkElk_4oY",
+    "FOLDER_COLORS": [
+      "#1E88E5",
+      "#E65100",
+      "#00695C"
+    ],
+    "FOLDER_ICONS": [
+      "icon1.png",
+      "icon2.png",
+      "icon3.png"
+    ],
+    "FP_SUBDOMAIN": "batchdriven",
+    "GTM_ID": "GTM-MQN64C3",
+    "FRESHCHAT": "86ca9457-cdb6-42d4-b098-a73c88de91b1"
+  }
+}

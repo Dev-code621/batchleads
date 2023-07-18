@@ -1,0 +1,134 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color.scss";
+
+.plan-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin: 20px 0;
+  padding: 15px 20px 30px 15px;
+  position: relative;
+  flex-direction: row;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  cursor: pointer;
+
+  .plan-info-left-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 55px;
+    justify-content: center;
+    .list-item-title-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .list-item-title {
+        width: auto;
+        font-size: 20px;
+        font-weight: normal;
+      }
+      .list-item-description {
+        font-size: 14px;
+        color: $gray-color;
+        @include theme-aware('color', 'color-site-text');
+        margin-top: 5px;
+      }
+      .list-item-addon {
+        text-decoration: line-through;
+        &.active {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .plan-info {
+    .plan {
+      &-interval {
+        text-transform: capitalize;
+        text-align: right;
+        font-size: 13px;
+        @include theme-aware('color', 'color-site-text');
+      }
+      &-price {
+        font-size: 1.5em;
+        font-weight: 600;
+        
+        font-size: 38px;
+        line-height: 0.8;
+      }
+    }
+  }
+  .plan-action {
+    text-align: center;
+    color: white;
+   
+    padding: 5px 5px;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: absolute;
+    width: 111px;
+    font-size: 14px;
+    left: 0;
+    bottom: 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  &.active {
+    background-color: $main-color;
+    padding: 15px 40px 30px 15px;
+    cursor: pointer;
+    &:hover {
+      opacity: .9;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('~assets/icons/arrow-left.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 10px;
+      height: 20px;
+      right: 15px;
+      top: calc(50% - 10px);
+    }
+
+    .plan-action {
+      @include theme-aware('color', 'color-site-text');
+      background-color: $white-color;
+      @include theme-aware('background-color', 'color-site-background');
+    }
+
+    .plan-info {
+      .plan {
+        &-interval, &-price {
+          color: $white-color;
+        }
+      }
+    }
+
+    .plan-info-left-container {
+      .list-item-title-container {
+        .list-item-title, .list-item-description {
+          color: $white-color;
+        }
+      }
+    }
+  }
+
+  &.downgrade {
+    .plan-action {
+      background-color: $gray-backgroud;
+    }
+  }
+  &.upgrade {
+    .plan-action {
+      background-color: $main-color;
+    }
+  }
+}
+

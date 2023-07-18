@@ -1,0 +1,138 @@
+@import "~theme/configs/color";
+.hero-intro-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  @media (max-width: 1024px) {
+    padding-top: 20px;
+  }
+  .millenialflippers {
+    @media (max-width: 375px) {
+      width: 100%;
+    }
+  }
+  .skip-traces-for {
+    font-family: 'BebasNeue';
+    font-size: 50px;
+    line-height: 56px;
+    text-align: center;
+    color: $dark-color;
+  }
+  .free-trial {
+    .free {
+      font-family: 'Barlow';
+      font-weight: 800;
+      font-size: 72px;
+      line-height: 56px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $main-color;
+      &::after {
+        content: '';
+        display: block;
+        height: 3px;
+        border: 3px solid $gray-color-1;
+        margin: 13px 0 13px 0;
+      }
+    }
+    .trial {
+      font-family: 'Barlow';
+      font-weight: 600;
+      font-size: 19.5px;
+      line-height: 23px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $main-color;
+    }
+  }
+  .read {
+    font-family: 'Barlow';
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+    color: $main-color;
+    span {
+      color: $dark-color;
+    }
+  }
+  .laptop {
+    width: 300px;
+    padding-top: 30px;
+    @media (max-width: 375px) {
+      width: 100%;
+    }
+  }
+  .iphones {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    top: -80px;
+    height: 10px;
+    @media (max-width: 1024px) {
+      display: none;
+    }
+    @media (max-width: 375px) {
+      display: none;
+    }
+    img {
+      width: 75px;
+      position: absolute;
+      top: -80px;
+      left: 90px;
+      @media (max-width: 1200px) {
+        width: 60px;
+        left: auto;
+        position: relative;
+      }
+      @media (max-width: 375px) {
+        width: 60px;
+        left: auto;
+        position: relative;
+      }
+    }
+  }
+  .iphones-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    position: relative;
+    padding: 70px 0px 110px;
+    left: -10px;
+    @media (max-width: 1024px) {
+      display: none;
+    }
+    @media (max-width: 375px) {
+      display: none;
+    }
+    img {
+      width: 75px;
+      position: relative;
+      @media (max-width: 1200px) {
+        width: 60px;
+      }
+      @media (max-width: 375px) {
+        width: 60px;
+      }
+    }
+    .iphone {
+      &-1 {
+        top: 75px;
+
+      }
+      &-2 {
+        top: 15px;
+      }
+      &-3 {
+        top: -45px;
+      }
+      &-4 {
+        top: -105px;
+      }
+    }
+  }
+}

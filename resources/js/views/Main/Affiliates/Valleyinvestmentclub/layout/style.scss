@@ -1,0 +1,110 @@
+@import "~theme/configs/color";
+
+.affiliate-landing-page {
+  &.valleyinvestmentclub {
+    .workflow-section {
+      h3 {
+        font-size: rem(36);
+        text-align: center;
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 43px;
+        text-transform: uppercase;
+        color: $main-color;
+      }
+    }
+    .hero-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      @media (max-width: 375px) {
+        margin-top: 0;
+      }
+      @media (max-width: 768px) {
+        margin-top: 0;
+      }
+      &.row {
+        margin-left: auto;
+        margin-right: auto;
+        .left {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          .iphones {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 90%;
+            position: relative;
+            top: -80px;
+            left: -20px;
+            @media (max-width: 1024px) {
+              display: none;
+            }
+            @media (max-width: 375px) {
+              display: none;
+            }
+            img {
+              width: 75px;
+              height: auto;
+              position: relative;
+              @media (max-width: 1200px) {
+                width: 60px;
+              }
+              @media (max-width: 375px) {
+                width: 60px;
+              }
+            }
+            .iphone {
+              &-2 {
+                top: 40px;
+              }
+              &-3 {
+                top: -10px;
+              }
+              &-4 {
+                top: -60px;
+              }
+              &-5 {
+                top: -110px;
+              }
+            }
+          }
+          .laptop {
+            width: 525px;
+            @media (max-width: 768px) {
+              width: 100%;
+            }
+          }
+        }
+        .right {
+          position: relative;
+          height: 500px;
+          @media (max-width: 1200px) {
+            height: auto;
+          }
+          @media (max-width: 375px) {
+            top: 30px;
+          }
+          @media (max-width: 768px) {
+            top: 30px;
+            .hero-intro-container img {
+              width: 100vw;
+            }
+          }
+        }
+        .bottom {
+          top: 30px;
+          position: relative;
+          @media (max-width: 1024px) {
+            left: 0;
+            top: 50px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}

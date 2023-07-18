@@ -1,0 +1,77 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+
+.verify-page {
+  margin: 0 !important;
+  background-color: white;
+  min-height: 100vh;
+  .verify-form {
+    .logo-container {
+      margin-left: 0;
+    }
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin-bottom: rem(100);
+    }
+    padding-top: rem(20);
+    padding-bottom: rem(50);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (min-width: 481px) and (max-width: 767px) {
+      width: 100%;
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      width: 100%;
+    }
+    .input-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-width: 300px;
+      margin-top: rem(50);
+      .input-component {
+        margin-bottom: rem(30);
+      }
+      .error-message {
+        color: red;
+        margin-bottom: rem(20);
+        text-align: center;
+      }
+    }
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: rem(150);
+      .social {
+        margin-top: 20px;
+      }
+      .social-icon {
+        margin-left: 20px;
+        margin-right: 20px;
+        color: black;
+        font-size: 1.5rem;
+        &:hover {
+          opacity: .8;
+        }
+      }
+      .nav-bar {
+        margin-top: rem(40);
+        color: #646464;
+        font-size: rem(16);
+        display: flex;
+        flex-direction: row;
+        div, a {
+          color: #646464;
+          cursor: pointer;
+          &:hover {
+            color: $main-color;
+          }
+        }
+      }
+    }
+  }
+}

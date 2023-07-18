@@ -1,0 +1,78 @@
+@import "~theme/configs/color";
+@import "~theme/configs/mixins";
+
+.top-footer-container {
+  width: 100%;
+  height: rem(501);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  background-color: #0ca1e3;
+  @media (min-width: 481px) and (max-width: 767px) {
+    height: rem(300);
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    height: rem(300);
+  }
+  .normal-description-container {
+    @media (min-width: 481px) and (max-width: 767px) {
+      display: none;
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      display: none;
+    }
+  }
+  .mobile-description-container {
+    display: none;
+    @media (min-width: 481px) and (max-width: 767px) {
+      display: block;
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      display: block;
+    }
+  }
+  .description {
+    font-size: rem(43);
+    font-weight: bold;
+    line-height: 1.42;
+    text-align: center;
+    color: $white-color;
+    padding-left: rem(20);
+    padding-right: rem(20);
+    @media (min-width: 481px) and (max-width: 767px) {
+      font-size: rem(25);
+      line-height: 1.2;
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      font-size: rem(25);
+      line-height: 1.2;
+    }
+  }
+  .button-container {
+    margin-top: rem(40);
+    .start-button {
+      width: rem(463);
+      height: rem(60);
+      border-radius: rem(30);
+      box-shadow: 0 rem(6) rem(18) 0 rgba(0, 0, 0, 0.16);
+      background-color: $white-color;
+      font-size: rem(18);
+      font-weight: 600;
+      line-height: 1.22;
+      color: #0c7de3;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      @media (min-width: 481px) and (max-width: 767px) {
+        font-size: rem(15);
+        width: rem(280);
+      }
+      @media (min-width: 320px) and (max-width: 480px) {
+        font-size: rem(15);
+        width: rem(280);
+      }
+    }
+  }
+}

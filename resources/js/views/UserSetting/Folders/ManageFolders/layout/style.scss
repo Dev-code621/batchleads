@@ -1,0 +1,31 @@
+@import "~theme/configs/color.scss";
+@import "~theme/configs/mixins.scss";
+
+.add-folder-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  color: $main-color;
+  justify-content: space-between;
+  margin: 5px 0 10px;
+  text-transform: uppercase;
+  .edit-wrapper {
+    margin-left: 0;
+    font-size: 16px;
+    color: $menu-text-color;
+    @include theme-aware('color', 'color-searchbar');
+  }
+  .edit-wrapper:hover {
+    color: $main-color;
+  }
+  .add-wrapper {
+    display: flex;
+    align-items: center;
+  }
+  svg {
+    margin-right: 5px;
+  }
+  &.button {
+    justify-content: center!important;
+  }
+}

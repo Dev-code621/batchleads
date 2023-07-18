@@ -1,0 +1,13 @@
+@import "~theme/configs/color";
+
+.input-tags-container {
+  .input-tag {
+    color: white;
+    width: max-content;
+    font-size: 12px;
+    margin: 5px 5px;
+    padding: 3px 12px;
+    border-radius: 15px;
+    background-color: $gray-backgroud;
+  }
+}

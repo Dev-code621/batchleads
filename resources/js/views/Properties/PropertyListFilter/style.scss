@@ -1,0 +1,16 @@
+@import "~theme/configs/color.scss";
+@import "~theme/configs/mixins.scss";
+.property-filter {
+  color: $menu-text-color;
+  background-color: $main-bg-color;
+  @include theme-aware('color', 'color-searchbar');
+  @include theme-aware('background-color', 'color-site-background');
+  height: 100vh;
+  width: 300px;
+  padding: 50px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  overflow: auto;
+}

@@ -1,0 +1,47 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color";
+.gn-base-modal {
+  .contact-modal-body {
+    width: 400px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    .contact-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px;
+      color: $main-color;
+      cursor: pointer;
+    }
+    .phone-type-container {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 20px;
+      @include theme-aware('color', 'color-site-text');
+      :hover {
+        color: $main-color;
+      }
+      .option {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        .title {
+          margin-left: 5px;
+        }
+      }
+    }
+    .content-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 95%;
+    }
+  }
+  .footer-wrapper {
+    width: 100%;
+    display: flex;
+  }
+}

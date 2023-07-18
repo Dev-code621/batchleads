@@ -1,0 +1,100 @@
+@import "~theme/configs/color";
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid $main-color;
+  -webkit-text-fill-color: $dark-border;
+  -webkit-box-shadow: 0 0 0 1000px white inset !important;
+}
+
+
+
+/* Customize the label (the custom-check) */
+.custom-check {
+  display: block;
+  position: relative;
+  padding-left: rem(25);
+  margin-bottom: rem(12);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  .checkmark {
+    position: absolute;
+    top: rem(2);
+    left: rem(2);
+    height: rem(14);
+    width: rem(14);
+    background-color: $light-color;
+  }
+
+  &:hover input ~ .checkmark {
+    background-color: $gray-backgroud;
+  }
+
+  & input:checked ~ .checkmark {
+    background-color: $main-color;
+  }
+
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  .checkmark:after {
+    left: rem(4);
+    top: rem(1);
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+
+.label {
+  font-size: rem(12);
+  font-weight: 600;
+  line-height: 1.17;
+  color: $gray-color;
+  margin-bottom: rem(10);
+}
+
+// react-mobile-datepicker
+.datepicker {
+  &-header {
+    color: $main-color !important;
+  }
+  &-wheel {
+    border-top: 1px solid $main-color !important;
+    border-bottom: 1px solid $main-color !important;
+  }
+  &-navbar-btn {
+    color: $main-color !important;
+  }
+}

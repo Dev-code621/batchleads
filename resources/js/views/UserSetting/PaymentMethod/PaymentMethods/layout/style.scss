@@ -1,0 +1,13 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color.scss";
+@import "~theme/configs/variables.scss";
+
+.payment-method-page {
+  @include theme-aware('color', 'color-site-text');
+  .form-scroll-container {
+    width: 100%;
+    margin-left: 0;
+    height: calc(#{$modelContentHeight} - 110px);
+  }
+
+}

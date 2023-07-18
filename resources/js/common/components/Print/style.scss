@@ -1,0 +1,13 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+@media print {
+  header,
+  footer {
+    display: none;
+  }
+}
+.print-iframe {
+  height: 0px;
+  width: 0px;
+  visibility: hidden; 
+}

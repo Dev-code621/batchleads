@@ -1,0 +1,18 @@
+.auto-recharge-setting-page {
+  .form-scroll-container {
+    width: 98%;
+    margin: auto;
+  }
+  .auto-recharge-setting {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    > div {
+      margin-bottom: 0;
+    }
+    .content-title {
+      width: auto;
+    }
+  }
+}

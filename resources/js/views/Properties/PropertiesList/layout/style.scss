@@ -1,0 +1,370 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color.scss";
+
+.property-list-page {
+  .form-scroll-container {
+    height: calc(#{$modelContentHeight} - 220px);
+    margin-top: 10px;
+    @media (min-width: 481px) and (max-width: 767px) {
+      height: calc(100vh - 140px);
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      height: calc(100vh - 140px);
+    }
+  }
+  .menu-btn {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    height: 20px;
+    width: 40px;
+    align-items: center;
+    margin-bottom: 2px;
+    z-index: 9999;
+    .menu-wrapper {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      width: 140px;
+      border-radius: 6px;
+      padding: 5px 0;
+      background-color: white;
+      @include theme-aware('background-color', 'color-site-background');
+      box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.16);
+      .menu-item {
+        padding: 10px 10px;
+        @include theme-aware('color', 'color-site-text');
+      }
+      .menu-item:hover {
+        background-color: $light-color;
+        color: $main-color;
+      }
+    }
+  }
+  .visible {
+    visibility: visible;
+  }
+  .invisible {
+    visibility: hidden;
+  }
+}
+.property-info {
+  height: 128px;
+  padding: 15px 15px 5px 15px !important;
+  .list-item-title-container {
+    justify-content: flex-start;
+    .address-info {
+      width: $modalInnerWidth - 88px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 14px;
+      font-weight: 600;
+      color: $main-color;
+      margin-left: 8px;
+      white-space: nowrap;
+      @media (min-width: 481px) and (max-width: 767px) {
+        width: calc(100vw - 169px);
+      }
+      @media (min-width: 320px) and (max-width: 480px) {
+        width: calc(100vw - 169px);
+      }
+    }
+  }
+  .middle-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .with-select {
+    width: $modalInnerWidth - 167px;
+    @media (min-width: 481px) and (max-width: 767px) {
+      width: calc(100vw - 184px);
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      width: calc(100vw - 184px);
+    }
+  }
+  .owner-info {
+    font-size: 18px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 22px;
+    margin-top: 4px;
+    letter-spacing: normal;
+    text-align: left;
+    @include theme-aware('color', 'color-site-text');
+    width: $modalInnerWidth - 87px;
+    @media (min-width: 481px) and (max-width: 767px) {
+      width: calc(100vw - 140px);
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      width: calc(100vw - 140px);
+    }
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 25px;
+    white-space: nowrap;
+  }
+  .folder-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    .icon-container {
+      width: 25px;
+      height: 25px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 11px;
+      padding-top: 2px;
+      .status-icon {
+        width: 16px;
+        height: 16px;
+        object-fit: contain;
+      }
+    }
+    .status-name {
+      font-size: 14px;
+      line-height: 1.21;
+      font-weight: 600;
+      text-align: left;
+      color: $gray-color;
+    }
+    .folder-name {
+      font-size: 14px;
+      font-stretch: normal;
+      font-style: normal;
+      letter-spacing: normal;
+      text-align: left;
+      font-weight: normal;
+      line-height: 17px;
+      color: $gray-color;
+      white-space: nowrap;
+      display: inline-block;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+  }
+}
+.property-bulk-selector {
+  background-color: $main-bg-color;
+  font-size: 13px;
+  position: fixed;
+  bottom: 20px;
+  margin-left: -20px;
+  width: $modalInnerWidth;
+  z-index: 999;
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: calc(100vw - 100px);
+    margin-left: 0;
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    width: calc(100vw - 100px);
+    margin-left: 0;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+  padding-left: 10px;
+  padding-right: 10px;
+  .property-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .property-select-box {
+      cursor: pointer;
+      margin-right: 10px;
+      color: $main-color;
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+.property-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skip-tracing-modal-body {
+  width: 500px;
+  padding: 0 30px;
+  height: fit-content;
+  @media (max-width: 767px) {
+    width: 90vw;
+  }
+  .skip-tracing-modal-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    padding: 10px 0;
+    cursor: pointer;
+    min-height: 100px;
+    align-items: center;
+    line-height: 25px;
+  }
+}
+.status-update-modal-body {
+  width: 375px;
+  padding: 0 30px;
+  height: fit-content;
+  &.folder-modal {
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+  @media (max-width: 767px) {
+    width: 90vw;
+  }
+  .status-update-modal-content {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    padding: 0;
+    cursor: pointer;
+    min-height: 100px;
+    align-items: center;
+    line-height: 25px;
+    .property-status-item {
+      width: 100%;
+      padding: 5 0;
+    }
+    
+  }
+}
+.property-list-header {
+  display: flex;
+  margin-bottom: 15px;
+  &>.bulk-selector {
+    position: relative;
+    flex: 1;
+    margin-right: 10px;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border: 2px solid;
+      background-color: transparent;
+      border-color: transparent $white-color $white-color transparent;
+      transform: rotate(45deg);
+      right: 15px;
+      top: 12px;
+      pointer-events: none;
+    }
+    &>input {
+      position: absolute;
+    }
+    &>.options-container {
+      position: absolute;
+      width: 100%;
+      top: 40px;
+      min-width: 130px;
+      background-color: $white-color;
+      @include theme-aware('background-color', 'color-site-background');
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      padding: 10px 0 0;
+      z-index: 1;
+      &>.option {
+        position: relative;
+        @include theme-aware('color', 'color-site-text');
+        width: 100%;
+        padding: 5px 15px;
+        cursor: pointer;
+        &.disabled {
+          color: $gray-color !important;
+        }
+        &.active {
+          color: $main-color;
+          font-weight: 600;
+        }
+        &:hover {
+          background-color: $light-color;
+          color: $main-color;
+        }
+        &--input {
+          padding: 0;
+          display: flex;
+          margin-top: 10px;
+          &>input[type=number] {
+            padding: 5px 13px;
+            width: 100%;
+            border: 1px solid;
+            border-color: $gray-color transparent transparent;
+            @include theme-aware('color', 'color-site-text');
+            font-size: 15px;
+            &::placeholder {
+              color: $gray-color;
+            }
+          }
+          &>input[type=button] {
+            position: absolute;
+            width: 30px;
+            height: calc(100% - 4px);
+            right: 0;
+            cursor: pointer;
+            background-image: url('~assets/icons/check_blue.svg');
+            background-repeat: no-repeat;
+            background-color: $white-color;
+            background-position: center;
+            border: none;
+            margin: 2px;
+          }
+        }
+
+      }
+    }
+    .overlay--bluk-selector {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-color: transparent;
+    }
+  }
+  &>.btn {
+    flex: 1;
+  }
+  &>.option-header-container {
+    position: relative;
+    margin-left: auto;
+    width: 50%;
+    &>.menu-btn {
+      width: 100%;
+      height: 40px;
+      .menu-wrapper {
+        top: 40px;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border: 2px solid;
+        background-color: transparent;
+        border-color: transparent $white-color $white-color transparent;
+        transform: rotate(45deg);
+        right: 15px;
+        top: 12px;
+        pointer-events: none;
+      }
+    }
+    &>.visible {
+      visibility: visible;
+    }
+    &>.invisible {
+      visibility: hidden;
+    }
+  }
+
+}

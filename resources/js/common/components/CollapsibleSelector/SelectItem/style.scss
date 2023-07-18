@@ -1,0 +1,33 @@
+@import "~theme/configs/color";
+.property-status-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  svg {
+    min-width: 16px;
+  }
+  .property-status-title {
+    display: flex;
+    align-items: center;
+    .icon-container {
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+      margin-left: 0;
+      .status-icon {
+        width: 10px;
+        height: 10px;
+        object-fit: contain;
+      }
+    }
+  }
+  .property-status-selected {
+    color: $main-color;
+    font-weight: bold;
+  }
+}

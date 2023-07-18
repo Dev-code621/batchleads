@@ -1,0 +1,325 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color";
+.plan-selector-container {
+  .spinner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .desktop-plan-pick-container {
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    // max-width: 800px;
+    @media (max-width: 767px) {
+      display: none;
+    }
+    .plan-picker-container {
+      position: absolute;
+      height: 100%;
+      @media (max-width: 767px) {
+        display: none;
+      }
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      .plan-picker {
+        width: 60%;
+        display: flex;
+        justify-content: space-between;
+        .plan-picker-item-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          outline: none;
+          width: 33.33%;
+          padding: 3px;
+
+          .plan-picker-item {
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            height: rem(35);
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            height: 100%;
+            margin: 10px 3px;
+            transition: all .2s;
+
+            .plan-title {
+              background-color: $gray-backgroud;
+              color: $white-color;
+              text-transform: uppercase;
+              font-size: 16px;
+              padding: 10px;
+              text-align: center;
+              height: 40px;
+              width: 100%;
+              border-radius: 10px 10px 0 0;
+              position: relative;
+              &::after {
+                content: '';
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                bottom: -16px;
+                left: calc(50% - 10px);
+                border-color: $gray-color transparent transparent;
+                border-width: 10px;
+                border-style: solid;
+                transform: scaleY(0.7);
+              }
+            }
+
+            &:hover {
+              .plan-title {
+                background-color: $light-blue-color;
+                &::after {
+                  border-color: $light-blue-color transparent transparent;
+                }
+              }
+            }
+
+            &.active {
+              margin: 0 3px;
+              .plan-title {
+                background-color: $main-color;
+                &::after {
+                  border-color: $main-color transparent transparent;
+                }
+              }
+            }
+          }
+
+        }
+      }
+    }
+    .plan-details-container {
+      @media (max-width: 767px) {
+        display: none;
+      }
+      width: 100%;
+      @include theme-aware('color', 'color-site-text');
+      margin-top: 60px;
+      margin-bottom: 20px;
+      .plan-details-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        &>div {
+          display: flex;
+          align-items: center;
+        }
+        .plan-details-item-description {
+          width: 40%;
+          font-size: 16px;
+        }
+        .plan-details-item-detail {
+          width: 60%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .plan-details-item-detail-cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 10px 20px;
+
+            &.pb-0 {
+              padding-bottom: 0;
+            }
+
+            .plan-price {
+              font-size: 26px;
+              font-weight: 600;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              &>span {
+                font-size: 12px;
+                font-weight: normal;
+                @include theme-aware('color', 'color-site-text');
+              }
+            }
+          }
+          .item {
+            font-size: 0.9em;
+            text-align: center;
+            display: inline;
+          }
+        }
+      }
+      .active {
+        color: $main-color;
+      }
+    }
+  }
+
+  .mobile-plan-pick-container {
+    display: none;
+    margin-bottom: 10px;
+    @media (max-width: 767px) {
+      display: block;
+    }
+    .slider {
+      width: 80vw !important;
+    }
+    .plan-carousel-item {
+      width: 100%;
+      // height: rem(400);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .plan-carousel-container {
+        width: 90%;
+        // height: rem(380);
+        border-radius: 16px;
+        box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          background-color: $main-color;
+          width: 100%;
+          height: 40px;
+          top: 0;
+          left: 0;
+          border-radius: 10px 10px 0 0;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          width: 0px;
+          height: 0px;
+          top: 36px;
+          left: calc(50% - 10px);
+          border-color: $main-color transparent transparent;
+          border-width: 10px;
+          border-style: solid;
+          transform: scaleY(0.7);
+        }
+
+        .plan-carousel-header {
+          z-index: 1;
+          width: 100%;
+          text-align: center;
+        }
+
+        .plan-name {
+          color: $white-color;
+          text-align: center;
+          font-size: 18px;
+          text-transform: uppercase;
+        }
+        .plan-price {
+          color: $main-color;
+          font-size: 34px;
+          font-weight: 600;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: fit-content;
+          margin: 15px auto;
+          position: relative;
+          span {
+            font-size: 14px;
+            @include theme-aware('color', 'color-site-text');
+            font-weight: normal;
+          }
+        }
+        .plan-details {
+          @include theme-aware('color', 'color-site-text');
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          width: calc(100% - 30px);
+          overflow-y: auto;
+          margin-bottom: 30px;
+
+          div {
+            margin-bottom: 5px;
+            font-size: 16px;
+          }
+          .plan-detail-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0;
+            &__title {
+              max-width: calc(100% - 35px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .has-tooltip  {
+    display: flex;
+    align-items: center;
+    span {
+      z-index: 100;
+      cursor: pointer;
+      background-color: $main-color;
+      color: $white-color;
+      font-size: 12px;
+      border-radius: 10px;
+      width: 16px;
+      height: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 5px;
+      font-family: Arial, Helvetica, sans-serif;
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+  .green-yes {
+    position: relative;
+    width: 25px;
+    min-width: 25px;
+    height: 25px;
+    // background-color: $success-color;
+    border-radius: 25px;
+    &::after {
+      position: absolute;
+      content: '';
+      background-image: url('~assets/icons/check_blue.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 25px;
+      height: 25px;
+    }
+  }
+  .gray-no {
+    position: relative;
+    width: 25px;
+    min-width: 25px;
+    height: 25px;
+    // background-color: $gray-color;
+    border-radius: 25px;
+    &::after {
+      position: absolute;
+      content: '';
+      background-image: url('~assets/icons/x.svg');
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 25px;
+      height: 25px;
+    }
+  }
+}

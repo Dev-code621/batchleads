@@ -1,0 +1,13 @@
+@import "~theme/configs/color";
+.secure-check-out-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $gray-light;
+  margin-top: 16px;
+  div {
+    margin-left: 10px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+}

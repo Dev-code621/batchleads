@@ -1,0 +1,58 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color.scss";
+
+.plans-page {
+  .billig-items-container {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 15px;
+    position: relative;
+    .w-100 {
+      width: 100%;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .close {
+      position: absolute;
+      cursor: pointer;
+      right: 10px;
+      top: 10px;
+      font-size: 28px;
+      width: 28px;
+      height: 30px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      line-height: 28px;
+      @include theme-aware('color', 'color-site-text');
+    }
+    .billing-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      .label {
+        width: 40%;
+        @include theme-aware('color', 'color-site-text');
+        font-size: 20px;
+        text-transform: uppercase;
+        font-weight: normal;
+        margin: 0;
+      }
+      .price {
+        width: 30%;
+        color: $main-color;
+        font-weight: 600;
+        font-size: 24px;
+      }
+      .save {
+        width: 30%;
+        text-transform: uppercase;
+        font-size: 12px;
+        color: $danger-color;
+        font-weight: 600;
+      }
+    }
+  }
+}

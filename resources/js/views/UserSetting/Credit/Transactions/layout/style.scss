@@ -1,0 +1,25 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color";
+
+.transaction-list {
+  .form-scroll-container {
+    height: calc(#{$modelContentHeight} - 125px);
+    @media (min-width: 481px) and (max-width: 767px) {
+      height: calc(100vh - 100px);
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      height: calc(100vh - 100px);
+    }
+  }
+  .transaction-info {
+    .charged-credit {
+      color: $main-color;
+    }
+    .spent-credit {
+      color: red;
+    }
+    .date-time-info {
+      font-size: 0.9em;
+    }
+  }
+}

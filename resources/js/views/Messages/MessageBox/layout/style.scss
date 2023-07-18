@@ -1,0 +1,45 @@
+@import "~theme/configs/color";
+@import "~theme/configs/mixins";
+@import "~theme/configs/variables";
+
+.message-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .form-scroll-container {
+    margin-left: 0;
+  }
+  .message-box-info {
+    .date-time-info {
+      font-size: 0.9em;
+      text-align: right;
+      width: 200px;
+    }
+    .message-info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 15px;
+      .latest-message {
+        width: $modalContentWidth - 50;
+        margin-right: 10px;
+        height: 15px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .badge {
+        color: white;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        background-color: $main-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}

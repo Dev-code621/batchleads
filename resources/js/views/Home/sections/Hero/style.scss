@@ -1,0 +1,204 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+@import "~theme/configs/variables";
+
+section.hero-section {
+  position: relative;
+  padding: rem(200) 0 rem(200);
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 500px;
+
+      .hero-icon {
+        margin-top: -150px;
+        padding-bottom: 20px;
+        text-align: center;
+        width: 70%;
+      }
+
+      .hero-logo {
+        font-size: rem(74);
+        font-family: BebasNeue;
+        font-weight: bold;
+        margin: 0;
+        color: $main-color;
+        letter-spacing: 2px;
+      }
+
+      .hero-title {
+        font-size: rem(58);
+        color: $dark-color;
+        font-family: Barlow;
+        font-weight: normal;
+        margin: 0;
+      }
+
+      .hero-description {
+        font-size: rem(18);
+        color: $dark-color;
+        margin-top: rem(30);
+        line-height: 1.5;
+      }
+
+      .hero-button-container {
+        margin-top: rem(40);
+      }
+    }
+
+    .hero-image {
+      max-width: 656px;
+      width: 656px;
+      height: 100%;
+
+      img {
+        width: 100%;
+      }
+
+      &.pricing-header {
+
+        img {
+          width: unset;
+          position: absolute;
+        }
+
+        .iphone {
+          &-1 {
+            left: 48.17%;
+            right: 37.21%;
+            top: 38.68%;
+            bottom: 11.79%;
+          }
+
+          &-2 {
+            left: 56%;
+            right: 26.34%;
+            top: 30.13%;
+            bottom: 20.34%;
+          }
+
+          &-3 {
+            left: 64%;
+            right: 15.32%;
+            top: 19.3%;
+            bottom: 30.78%;
+          }
+
+          &-4 {
+            left: 72%;
+            right: 4.58%;
+            top: 13.04%;
+            bottom: 37.44%;
+          }
+        }
+
+      }
+      .image-text {
+        text-align: center;
+        color: $main-color;
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 30px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  @media (max-width: 1199px) {
+    padding-top: rem(200);
+    padding-bottom: rem(100);
+
+    .container {
+      flex-direction: column;
+      align-items: center;
+
+      .hero-text {
+        width: 100%;
+        max-width: inherit;
+        text-align: center;
+
+        .hero-icon {
+          margin-top: -130px;
+          width: 100%;
+        }
+
+        .hero-logo {
+          width: 100%;
+        }
+
+        .hero-title {
+          width: 100%;
+        }
+
+        .hero-description {
+          width: 100%;
+        }
+
+        .hero-button-container {
+          margin-left: auto;
+          margin-right: auto;
+          margin-bottom: 60px;
+        }
+      }
+
+      .hero-image {
+        &.pricing-header {
+          display: flex;
+          width: unset;
+          max-width: unset;
+
+          img {
+            position: unset;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: rem(150) 0 rem(100);
+
+    .container {
+      .hero-text {
+        .hero-icon {
+          margin-top: -130px;
+          width: 100%;
+        }
+
+        .hero-logo {
+          font-size: rem(64);
+        }
+
+        .hero-title {
+          font-size: rem(24);
+        }
+
+        .hero-description {
+          font-size: rem(16);
+        }
+      }
+
+      .hero-image {
+        width: 100%;
+
+        &.pricing-header {
+          display: none;
+          width: unset;
+          max-width: unset;
+
+          img {
+            position: unset;
+          }
+        }
+      }
+    }
+  }
+}

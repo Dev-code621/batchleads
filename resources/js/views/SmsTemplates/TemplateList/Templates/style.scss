@@ -1,0 +1,22 @@
+@import "~theme/configs/mixins.scss";
+
+.sms-templates-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  .sms-template-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    .form-scroll-container {
+      height: calc(#{$modelContentHeight} - 160px);
+      margin-left: 0;
+    }
+  }
+  .template-info {
+    height: 60px;
+  }
+}

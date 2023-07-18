@@ -1,0 +1,21 @@
+.no-items-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-width: 300px;
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: calc(100vw - 100px);
+    min-width: unset;
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    width: calc(100vw - 100px);
+    min-width: unset;
+  }
+  .no-items-description {
+    font-size: 14px;
+    color: #646464;
+    margin-bottom: 12px;
+  }
+}

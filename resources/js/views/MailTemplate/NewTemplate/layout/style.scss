@@ -1,0 +1,101 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color";
+
+.new-template-form {
+  .template-type-selector {
+    outline: none;
+    cursor: pointer;
+    border-radius: 16px;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+     @include theme-aware('background-color', 'color-site-background');
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 15px 15px;
+    .template-type-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 30px;
+      .template-type-name {
+        font-weight: 600;
+        margin-bottom: 10px;
+       
+      }
+      .template-type-description {
+        font-size: 0.8em;
+        color: $gray-color;
+      }
+    }
+  }
+  .primary-color-picker-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .primary-color-picker {
+      position: relative;
+      outline: none;
+      cursor: pointer;
+      border-radius: 16px;
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      width: 100%;
+      height: 62px;
+      margin-bottom: 10px;
+      .color-label {
+        margin-left: 20px;
+        color: white;
+        mix-blend-mode: difference;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url('~assets/icons/color_picker.svg');
+        width: 24px;
+        height: 24px;
+        right: 22.4px;
+        mix-blend-mode: difference;
+      }
+    }
+  }
+  .eye-icon {
+    cursor: pointer;
+  }
+  .mail-tags-container {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    width: 100%;
+  }
+}
+
+.mail-template-preview-section {
+  padding: 10px 10px;
+  .preview-container {
+    width: 576px;
+    height: 384px;
+    &.letter-preview-container {
+      height: 820px;
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+      width: 90vw;
+      height: 60vw;
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      width: 90vw;
+      height: 60vw;
+    }
+    border: none;
+    background-color: white;
+    div {
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,145 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color.scss";
+@import "~theme/configs/variables.scss";
+
+.driving-routes-page {
+  .form-scroll-container {
+    height: calc(#{$modelContentHeight} - 205px);
+    @media (min-width: 481px) and (max-width: 767px) {
+      height: calc(100vh - 210px);
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      height: calc(100vh - 210px);
+    }
+  }
+  .route-info-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $main-color;
+    border-radius: 16px;
+    padding: 10px 25px;
+    margin: 10px 0;
+
+    &__col {
+      display: flex;
+      flex-direction: column;
+      .recent-text {
+        font-weight: 400;
+        font-size: rem(14);
+        color: $white-color;
+        margin: 0;
+      }
+    }
+    .route-info {
+      font-size: rem(40);
+      color: white;
+      font-weight: 600;
+      span {
+        font-size: rem(14);
+        font-weight: 400;
+        margin-left: 5px;
+      }
+    }
+  }
+  .route-time-container {
+    display: flex;
+  }
+  .route-info-item {
+    height: 80px;
+    position: relative;
+    .virtual-route-marker {
+      position: absolute;
+      left: 5px;
+    }
+    .description-item {
+      .route-user {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        width: 35%;
+        .user-name {
+          padding-left: 18px;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+        }
+        &::before {
+          position: absolute;
+          content: '';
+          background-image: url('~assets/icons/user_outline.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 14px;
+          height: 14px;
+          left: 0;
+        }
+      }
+      .route-property {
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 35%;
+        .property-count {
+          padding-left: 18px;
+        }
+        &::before {
+          position: absolute;
+          content: '';
+          background-image: url('~assets/icons/property_outline.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 14px;
+          height: 14px;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+.driving-route-filter-body {
+  background-color: $white-color;
+  @include theme-aware('background-color', 'color-site-background');
+  width: 430px;
+  padding: 0 30px;
+  height: 620px;
+  overflow-y: scroll;
+  .cancel {
+    color: $gray-color;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .Collapsible__trigger {
+    padding: 12px 20px;
+  }
+  .react-datepicker-wrapper {
+    input[type=text] {
+      height: 48px;
+    border-radius: 16px;
+      @include theme-aware('color', 'color-site-text');
+      @include theme-aware('background-color', 'color-site-background');
+    }
+  }
+  .react-datepicker {
+    @include theme-aware('background-color', 'color-site-background');
+    .react-datepicker__header  {
+      @include theme-aware('background-color', 'color-searchbar-bg');
+    }
+    .react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name .react-datepicker__current-month {
+      @include theme-aware('color', 'color-site-text');
+    }
+    *::before, *::after {
+      @include theme-aware('background-color', 'color-site-background');
+    }
+  }
+  .btn {
+    min-height: 48px;
+    margin-top: 10px;
+  }
+}

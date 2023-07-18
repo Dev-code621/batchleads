@@ -1,0 +1,18 @@
+.change-password-page {
+    position: relative;
+    height: calc(100% - 5px);
+    .button-container {
+        position: absolute;
+        bottom: 5px;
+    }
+    .input-component--password {
+        &.has-error{
+            &::before {
+              top: calc(50% - 10px);
+            }
+            &>.show-text {
+              top: calc(50% - 10px) !important;
+            }
+        }
+    }
+}

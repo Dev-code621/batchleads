@@ -1,0 +1,174 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+@import "~theme/configs/variables";
+
+.testimonial-section {
+  background-color: $main-color;
+  padding: rem(40) 0 rem(30);
+
+  .container {
+    h3 {
+      text-align: center;
+      font-weight: normal;
+      color: $white-color;
+      font-size: rem(36);
+      margin: 0 rem(30);
+    }
+
+    p {
+      color: $gray-color;
+      font-size: rem(22);
+      font-weight: normal;
+      text-align: center;
+      margin: rem(5) rem(30) rem(30);
+    }
+  }
+
+  .carousel-item {
+    transition: margin-top .3s;
+
+    .carousel-row {
+      height: 100%;
+    }
+
+    &.active {
+      margin-top: rem(-30) !important;
+    }
+  }
+
+  .carousel-dots {
+    margin-top: rem(-30);
+
+    li {
+      width: 50px;
+
+      button {
+        width: 50px;
+        height: 6px;
+        padding: 0;
+        background-color: rgba(#fff, 0.3);
+
+        &::before {
+          display: none;
+        }
+      }
+
+      &.carousel-dots-active {
+        button {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+
+  .testimonial-card {
+    width: calc(100% - 30px);
+    height: 100%;
+    min-width: 300px;
+    min-height: 380px;
+    padding: rem(30);
+    background-color: $white-color;
+    margin: rem(30) auto;
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &>img {
+      width: fit-content;
+    }
+
+    p {
+      color: $dimgray-color;
+      font-size: rem(20);
+    }
+
+    .customer {
+      display: flex;
+      width: fit-content;
+      justify-content: center;
+      margin: rem(30) auto;
+
+      &__picture {
+        width: 80px;
+        height: 80px;
+        border-radius: 80px;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 100%;
+        }
+
+        .youtube {
+          position: absolute;
+          content: '';
+          background-image: url('~assets/images/play_blue.svg');
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 30px;
+          height: 30px;
+          bottom: -15px;
+          left: calc(50% - 15px);
+
+          &:hover {
+            filter: brightness(1.1);
+          }
+        }
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+        font-size: rem(18);
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: rem(30);
+
+        &__name {
+          color: $main-color;
+          font-weight: 600;
+        }
+
+        &__role {
+          color: $dimgray-color;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .container {
+      h3 {
+        font-size: rem(28);
+      }
+
+      p {
+        font-size: rem(18);
+      }
+    }
+
+    .carousel-item {
+      margin-top: rem(-30) !important;
+    }
+
+    .testimonial-card {
+      .customer {
+        flex-direction: column;
+        align-items: center;
+
+        &__info {
+          margin-left: auto;
+          align-items: center;
+          margin-top: rem(15)
+        }
+      }
+    }
+  }
+
+}

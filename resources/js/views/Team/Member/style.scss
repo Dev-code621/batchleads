@@ -1,0 +1,32 @@
+@import "~theme/configs/color";
+
+.team-member-page {
+  position: relative;
+  height: calc(100% - 5px);
+  .user-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    span {
+      margin-left: 5px;
+    }
+  }
+  .online {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    color: $other-blue-color;
+  }
+  .member-googlemap-container {
+    height: 300px;
+  }
+  .button-container {
+    position: absolute;
+    bottom: 5px;
+  }
+}

@@ -1,0 +1,20 @@
+// BASIC
+$baseFontSize: 18;
+
+// SIDEBAR
+$menuZndex: 100;
+$menuAnimationSpeed: 0.15s;
+$menuIconScale: 0.8;
+$menuFontSize: rem(17);
+$menuWidth: 60px; // based on feeling
+$menuExpandWidth: 260px; // based on feeling
+$menuHeight: 52px; // based on card 584
+$menuLogoutMargin: 100px;
+
+// MAIN MODAL
+$modelContainerTop: 100px;
+$modalContainertWidth: 381px;
+$modalInnerWidth: 358px;
+$modalContentWidth: 290px;
+$modelContentHeight: calc(100vh - #{$modelContainerTop});
+$modalPaddingX: 12px;

@@ -1,0 +1,71 @@
+@import "~theme/configs/color";
+
+.affiliate-landing-page {
+  &.clever {
+    .workflow-section {
+      h3 {
+        font-size: rem(36);
+        text-align: center;
+        font-family: Barlow;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 43px;
+        text-transform: uppercase;
+        color: $main-color;
+      }
+    }
+    .hero-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      margin-top: -40px;
+      &.row {
+        margin-left: auto;
+        margin-right: auto;
+        .left {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          img {
+            width: 700px;
+            @media (max-width: 1024px) {
+              width: auto;
+            }
+            @media (max-width: 786px) {
+              width: auto;
+              max-width: 100vW;
+            }
+          }
+          @media (max-width: 1024px) {
+            margin-top: 0;
+          }
+          @media (max-width: 375px) {
+            margin-top: 0;
+          }
+          .hero-text-container {
+            position: relative;
+            left: 100px;
+            @media (max-width: 786px) {
+              width: auto;
+              left: 0px;
+            }
+          }
+        }
+        .right {
+          @media (max-width: 375px) {
+            margin-bottom: 30px;
+          }
+          @media (max-width: 768px) {
+            margin-bottom: 30px;
+          }
+          .hero-intro-container {
+            .read {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

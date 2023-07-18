@@ -1,0 +1,80 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+
+.step-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .step {
+    position: relative;
+    display: flex;
+
+    &--0 {
+      width: 45%;
+    }
+    &--1 {
+      width: 30%
+    }
+    &--2 {
+      width: 25%;
+    }
+
+    img {
+      width: rem(42);
+      height: rem(42);
+      margin-top: rem(4);
+      z-index: 2;
+    }
+    &__label {
+      @include theme-aware('color', 'color-site-text');
+      font-size: rem(16);
+      margin-left: rem(10);
+      .value {
+        @include theme-aware('color', 'color-site-text');
+        margin-left: rem(5);
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      height: 3px;
+      width: 100%;
+      background-color: $gray-backgroud;
+      top: rem(23);
+      z-index: 1;
+    }
+
+    &.active {
+      .step__label {
+        color: $main-color;
+      }
+      &::before {
+        background-color: $main-color;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .step {
+      flex-direction: column;
+      &--0, &--1, &--2 {
+        width: 100%;
+      }
+
+      &__label {
+        font-size: rem(14);
+        margin-top: rem(5);
+        margin-left: 0;
+      }
+
+      img {
+        width: rem(30);
+        height: rem(30);
+      }
+
+      &::before {
+        top: rem(18);
+      }
+    }
+  }
+}

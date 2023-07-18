@@ -1,0 +1,262 @@
+@import "~theme/configs/color.scss";
+@import "~theme/configs/mixins.scss";
+
+.kpi-page {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  .filter-panel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .kpi-chart-container {
+    position: absolute;
+    top: 0;
+    height: calc(100vh - #{$modelContainerTop} - 30px);
+    padding: 15px;
+    margin-top: calc(#{$modelContainerTop} + 15px);
+    border-radius: 16px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.15);
+    margin-left: 400px;
+    width: calc(100% - 430px);
+    right: 40px;
+    background-color: $white-color;
+    @include theme-aware('background-color', 'color-site-background');
+    overflow-y: auto;
+    &>.row {
+      height: calc(100vh - #{$modelContainerTop} - 30px);
+    }
+    .rechart-box {
+      min-width: calc(100vw - (calc(calc(100vw + 520px)/2)vw));
+    }
+    .rechart-container {
+      height: 245px;
+    }
+    .custom-tooltip {
+      background-color: white;
+      color: $menu-text-color;
+      @include theme-aware('background-color', 'color-site-background');
+      @include theme-aware('color', 'color-searchbar');
+      padding: 10px 10px;
+      border-radius: 5px;
+      min-width: 350px;
+      height: 120px;
+      box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.16);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    .summary-info {
+      color: $menu-text-color;
+      @include theme-aware('color', 'color-searchbar');
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+    }
+    .label-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      .label {
+        font-weight: 600;
+        font-size: 18px;
+        @include theme-aware('color', 'color-site-text');
+      }
+      .percent {
+        padding: 5px 5px;
+        color: white;
+        border-radius: 15px;
+      }
+      .plus {
+        background-color: $success-color;
+      }
+      .minus {
+        background-color: $danger-color;
+      }
+    }
+    .info-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      .info {
+        width: 50%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        .count-info {
+          font-size: 1.5em;
+          color: #3683bc;
+        }
+        .prev {
+          color: #e8e8e8;
+        }
+        .date-info {
+          font-size: 1em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .prev-info {
+        align-items: flex-end;
+      }
+    }
+  }
+  .selected-tab {
+    @include theme-aware('background-color', 'color-site-background');
+    @include theme-aware('color', 'color-site-text');
+  }
+}
+
+// .kpi-page {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   z-index: 999;
+//   width: 100%;
+//   padding: 20px 20px;
+//   background-color: #f5f8f9;
+//   min-height: 100vh;
+//   .rechart-box {
+//     background-color: white;
+//     padding: 10px 10px;
+//   }
+//   .rechart-container {
+//     height: 250px;
+//   }
+//   .kpi-filter {
+//     font-size: 1.5em;
+//     color: black;
+//     cursor: pointer;
+//   }
+//   .range-select {
+//     width: 100%;
+//     height: 50px;
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     justify-content: center;
+//     .select-btn {
+//       padding: 10px 10px;
+//       text-align: center;
+//       line-height: 15px;
+//       min-width: 60px;
+//     }
+//     .active {
+//       background-color: white;
+//       border-radius: 10px;
+//       box-shadow: 1px 1px 5px rgba(0,0,0,.2);
+//       font-weight: bold;
+//     }
+//   }
+//   .kpis-filter-infos {
+//     width: 100%;
+//     height: 50px;
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     justify-content: center;
+//     .filter-info-item {
+//       padding: 10px 10px;
+//       text-align: center;
+//       line-height: 15px;
+//       min-width: 60px;
+//       border: 2px solid $main-color;
+//       margin: 10px 10px;
+//       border-radius: 20px;
+//       background-color: white;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//     }
+//   }
+//   .custom-tooltip {
+//     background-color: white;
+//     color: $menu-text-color;
+//     padding: 10px 10px;
+//     border-radius: 5px;
+//     min-width: 350px;
+//     height: 120px;
+//     box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.16);
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-around;
+//   }
+//   .summary-info {
+//     color: $menu-text-color;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-around;
+//     width: 100%;
+//   }
+//   .label-info {
+//     display: flex;
+//     align-items: center;
+//     justify-content: space-between;
+//     flex-direction: row;
+//     .label {
+//       font-weight: bold;
+//     }
+//     .percent {
+//       padding: 5px 5px;
+//       color: white;
+//       border-radius: 15px;
+//     }
+//     .plus {
+//       background-color: #28f29e;
+//     }
+//     .minus {
+//       background-color: #b24c63;
+//     }
+//   }
+//   .info-container {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     flex-direction: row;
+//     .info {
+//       width: 50%;
+//       display: flex;
+//       align-items: flex-start;
+//       flex-direction: column;
+//       .count-info {
+//         font-size: 1.5em;
+//         color: #3683bc;
+//       }
+//       .prev {
+//         color: #e8e8e8;
+//       }
+//       .date-info {
+//         font-size: 1em;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//       }
+//     }
+//     .prev-info {
+//       align-items: flex-end;
+//     }
+//   }
+// }
+// .date-range-picker-modal-button-container {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-around;
+//   flex-direction: row;
+// }
+// .kpis-filter-modal {
+//   color: $menu-text-color;
+//   background-color: $main-bg-color;
+//   min-height: 100vh;
+//   width: 300px;
+//   padding: 50px 20px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-start;
+//   flex-direction: column;
+//   overflow-y: auto;
+// }

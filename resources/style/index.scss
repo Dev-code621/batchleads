@@ -1,0 +1,255 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color";
+@import "~theme/configs/animate.min";
+
+@import "./fonts.scss";
+@import "./elements.scss";
+
+html, body {
+  font-size: 18px;
+  font-family: Barlow, sans-serif, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: $white-color;
+  background-color: $background-color !important;
+  overflow-x: hidden;
+  input::-ms-reveal, input::-ms-clear {
+    display: none;
+  }
+  input {
+    font-family: Barlow, sans-serif;
+  }
+  .scroll-up-container {
+    bottom: 100px !important;
+    outline: none;
+  }
+  .content-row {
+    padding: 5px;
+  }
+  .react-tabs {
+    width: 100%;
+  }
+  .tab-container {
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    position: relative;
+    border-radius: 35px;
+    background: #eeeeee;
+    width: 100%;
+
+    .tab {
+      font-size: 13px;
+      color: $gray-color;
+      text-align: center;
+      padding: 10px 0px;
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+      display: inline-block;
+      width: 50%;
+    }
+    .selected-tab {
+      width: 50%;
+      font-size: 13px;
+      font-weight: 600;
+      color: $dark-color;
+      text-align: center;
+      padding: 12px 0px;
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+      display: inline-block;
+      background-color: white;
+      border-radius: 35px;
+      box-shadow: 0 0.15rem 0.4rem rgba(0, 0, 0, 0.1);
+    }
+  }
+  .tab-panel {
+    min-width: $modalContentWidth;
+    display: flex;
+    justify-content: center;
+  }
+  .list-item {
+    outline: none;
+    cursor: pointer;
+    border-radius: 16px;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    @include theme-aware('background-color', 'color-site-background');
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 15px 20px;
+    margin: 10px $modalPaddingX;
+    min-width: $modalContentWidth;
+    @media (min-width: 481px) and (max-width: 767px) {
+      width: calc(100vw - 108px);
+      min-width: unset;
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      width: calc(100vw - 108px);
+      min-width: unset;
+    }
+    .description-item {
+      font-size: 12px;
+     
+      @include theme-aware('color', 'color-site-text');
+      .campaign-template, .campaign-properties {
+        &>span {
+          font-weight: 600;
+        }
+      }
+      .campaign-template {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 40%;
+        padding-right: 5px;
+      }
+      .campaign-properties {
+        width: 25%;
+      }
+      .campaign-date {
+        width: 35%;
+        text-align: right;
+      }
+    }
+    &-title-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .list-item-title {
+        font-size: 14px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.21;
+        letter-spacing: normal;
+        text-align: left;
+        // color: $dark-color;
+        @include theme-aware('color', 'color-site-text');
+        width: calc(100% - 50px);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+    }
+    .bottom-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+    }
+    &-active {
+      border: 2px solid $main-color;
+    }
+  }
+  [role=button] {
+    cursor: pointer;
+    outline: none;
+  }
+  .datepicker {
+    .datepicker-navbar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .StripeElement--webkit-autofill {
+    background: transparent !important;
+  }
+
+  .StripeElement {
+    width: 100%;
+    padding: 11px 15px 11px 0;
+  }
+
+  .error-message {
+    margin-top: rem(20);
+    margin-bottom: rem(20);
+    color: red;
+    font-size: rem(12);
+  }
+
+  .altumcode-site {
+    display: none !important;
+  }
+
+  .react-datepicker-wrapper {
+    width: 100%;
+    input[type=text] {
+      width: 100%;
+      -webkit-box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+      height: 58px;
+      min-width: 250px;
+      border-radius: 50px;
+      padding: 10px 50px 10px 20px;
+      font-size: 15px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      outline: none;
+      border-style: none;
+      color: $dark-color;
+      @include theme-aware('color', 'color-site-text');
+      @include theme-aware('background-color', 'color-site-background');
+    }
+  }
+}
+
+.ReactModal__Overlay {
+  z-index: 3;
+}
+
+// Scroll bar
+* {
+  scrollbar-color: transparent transparent;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.mail-tags-container, .sms-tags-container {
+  padding-bottom: 5px;
+  &::-webkit-scrollbar-track {
+    box-shadow: none;
+  }
+  &::-webkit-scrollbar {
+      height: 4px;
+      width: 4px;
+      background-color: #AAAAAA;
+      border-radius: 4px !important;
+  }
+  &::-webkit-scrollbar-thumb:horizontal {
+      background-color: #454545;
+      border-radius: 4px !important;
+  }
+}
+
+// stop scrolling
+.stop-scrolling {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.Toastify__toast--success {
+  background: #3683bc80;
+}
+.Toastify__toast--error {
+  background: #f7775bb3;
+}

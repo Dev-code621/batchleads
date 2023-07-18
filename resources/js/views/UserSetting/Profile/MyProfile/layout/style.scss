@@ -1,0 +1,47 @@
+@import "~theme/configs/color.scss";
+@import "~theme/configs/variables.scss";
+
+.profile-page--first {
+  height: calc(100% - 5px);
+  position: relative;
+
+  .next-invoice-date {
+    width: 100%;
+    text-align: right;
+    padding: 0 10px;
+    position: relative;
+    top: -10px;
+    color: $gray-light;
+    font-size: 12px;
+  }
+
+  .form-scroll-container {
+    height: calc(#{$modelContentHeight} - 112px);
+  }
+  .content-row {
+    padding: 0 10px 10px;
+    .plan-card {
+      margin-top: 0;
+    }
+  }
+  .button-container {
+    margin-top: 20px;
+    &>* {
+      margin-bottom: 15px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .user-name {
+    h4 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 600;
+    }
+    p {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      font-size: 12px;
+    }
+  }
+}

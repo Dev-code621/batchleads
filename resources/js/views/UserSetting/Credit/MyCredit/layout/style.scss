@@ -1,0 +1,29 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color.scss";
+.credit-page {
+  .list-item-title-container {
+    margin-bottom: 30px;
+    justify-content: space-around;
+    .list-item-title {
+      font-size: 1.5em;
+    }
+  }
+  .balance-info {
+    text-align: center;
+    font-size: 1.5em;
+    color: $main-color;
+    font-size: 40px;
+    line-height: 48px;
+    font-weight: 800;
+    span {
+      margin-left: 17px;
+      @include theme-aware('color', 'color-site-text');
+      font-size: 26px;
+      line-height: 31px;
+      font-weight: 600;
+    }
+  }
+  .nav-item-container {
+    width: 90%;
+  }
+}

@@ -1,0 +1,29 @@
+@import "~theme/configs/variables";
+@import "~theme/configs/color";
+.new-campaign-form {
+    .form-scroll-container {
+        width: 100%;
+        margin-left: 0;
+        height: calc(#{$modelContentHeight} - 176px);
+    }
+    .gn-base-modal {
+        border-radius: 5px;
+        .phone-container {
+          width: 350px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 95%;
+          }
+        }
+        .modal-container .modal-footer .footer-wrapper {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+}

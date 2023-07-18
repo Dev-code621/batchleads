@@ -1,0 +1,84 @@
+@import "~theme/configs/color";
+@import "~theme/configs/variables.scss";
+
+.new-template-form {
+  .form-scroll-container {
+    width: 100%;
+    margin-left: 0;
+    height: calc(#{$modelContentHeight} - 176px);
+
+    .sms-detail-container {
+      margin-bottom: 10px;
+      width: 100%;
+      .sms-detail-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        .label {
+          margin-bottom: 4px;
+        }
+      }
+      .sms-detail-day {
+        width: 100%;
+        position: relative;
+        select {
+          border: none;
+          width: 100%;
+          background-color: $main-color;
+          padding: 20px 20px 20px 50px;
+          border-radius: 16px;
+          color: $white-color;
+          margin: 5px 0 15px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -o-appearance: none;
+          cursor: pointer;
+          font-size: 14px;
+          box-shadow: 0 0.16667rem 0.55556rem 0 rgba(0, 0, 0, 0.08);
+        }
+        &::before {
+          content: 'Day';
+          position: absolute;
+          left: 25px;
+          top: 22px;
+          color: $white-color;
+          font-size: 14px;
+          margin-top: 1px;
+        }
+        &::after {
+          content: '';
+          position: absolute;
+          right: 25px;
+          top: 29px;
+          border-right: 3px solid $white-color;
+          border-bottom: 3px solid $white-color;
+          border-left: 3px solid transparent;
+          border-top: 3px solid transparent;
+          transform: rotate(-45deg);
+        }
+      }
+      .sms-tags-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+    }
+    .sms-detail-selector-container {
+      width: 100%;
+      .sms-detail-selector {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        .plus-icon {
+          color: $main-color;
+        }
+        .sms-detail-selector-label {
+          color: $main-color;
+          font-size: 15px;
+          margin-left: 15px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

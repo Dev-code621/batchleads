@@ -1,0 +1,240 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+@import "~theme/configs/variables";
+
+.workflow-section {
+  padding: rem(30) rem(15) rem(30);
+
+  .container {
+    color: $dimgray-color;
+
+    h3 {
+      font-size: rem(36);
+      font-weight: normal;
+      text-align: center;
+    }
+
+    h4.node__title {
+      color: $main-color;
+      margin: 0;
+      font-size: rem(20);
+      font-weight: 600;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 17px;
+        height: 17px;
+        background-color: white;
+        border: 2px solid $main-color;
+        border-radius: 19px;
+        left: -39px;
+        top: 10px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        background-color: $gray-backgroud;
+        ;
+        border-radius: 10px;
+        left: -34px;
+        top: 15px;
+      }
+    }
+
+    p {
+      font-size: rem(16);
+      margin: rem(10) 0;
+      max-width: 400px;
+    }
+
+    .node {
+      display: flex;
+
+      &__info {
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        p {
+          height: 0;
+        }
+      }
+
+      &__image {
+        position: relative;
+        width: 50%;
+        height: fit-content;
+
+        img {
+          width: 100%;
+          max-width: 450px;
+          padding: rem(20) 0;
+        }
+      }
+
+      &:nth-child(odd) {
+        .node__info {
+          order: 2;
+          text-align: left;
+          padding-left: 30px;
+
+          &::before {
+            position: absolute;
+            content: '';
+            width: 3px;
+            height: 100%;
+            background-color: $main-color;
+            left: -2px;
+          }
+        }
+
+        .node__image {
+          order: 1;
+          text-align: right;
+          padding-right: 30px;
+        }
+      }
+
+      &:nth-child(even) {
+        .node__info {
+          text-align: right;
+          padding-right: 30px;
+
+          &::before {
+            position: absolute;
+            content: '';
+            width: 3px;
+            height: 100%;
+            background-color: $main-color;
+            right: -1px;
+          }
+
+          .node__title::before {
+            left: inherit;
+            right: -38px;
+          }
+
+          .node__title::after {
+            left: inherit;
+            right: -33px;
+          }
+
+          .node__description {
+            margin-left: auto;
+          }
+        }
+
+        .node__image {
+          text-align: left;
+          padding-left: 30px;
+        }
+      }
+
+      &:first-child {
+        .node__info {
+          &::before {
+            top: 50%;
+            height: 50%;
+          }
+        }
+      }
+
+      &:last-child {
+        .node__info {
+          &::before {
+            height: 50%;
+            top: 0;
+          }
+        }
+      }
+
+    }
+
+
+
+
+  }
+
+  @media (max-width: 767px) {
+    padding: rem(15) rem(10);
+
+    .container {
+      h3 {
+        font-size: rem(30);
+        font-weight: normal;
+      }
+
+      .node {
+        flex-direction: column;
+        position: relative;
+
+        &::before {
+          position: absolute;
+          content: '';
+          width: 3px;
+          height: 100%;
+          background-color: $main-color;
+          left: 10px;
+          top: 15px
+        }
+
+        &:last-child::before {
+          display: none;
+        }
+
+        &__info {
+          order: 1 !important;
+          text-align: left !important;
+          padding-left: 30px !important;
+          padding-right: auto !important;
+          width: 100% !important;
+
+          &::before {
+            display: none;
+          }
+        }
+
+        &__image {
+          width: 100% !important;
+          order: 2 !important;
+          padding: 0 !important;
+          margin: 0 auto rem(15) !important;
+          text-align: center !important;
+
+          img {
+            width: 80%;
+          }
+        }
+
+        &__title {
+          padding-left: 5px;
+
+          &::before {
+            left: -27px !important;
+            top: 5px !important;
+            right: inherit;
+          }
+
+          &::after {
+            left: -22px !important;
+            top: 10px !important;
+            right: inherit;
+          }
+        }
+
+        &__description {
+          height: fit-content !important;
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

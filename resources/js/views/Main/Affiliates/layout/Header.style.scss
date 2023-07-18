@@ -1,0 +1,15 @@
+.affiliate-header-container {
+  padding: 30px 130px 82px;
+  & img {
+    width: 230px;
+  }
+  @media (max-width: 768px) {
+    padding-left: 0px;
+    padding-right: 0px; 
+    text-align: center;
+  }
+  @media (max-width: 375px) {
+    padding: 30px 30px;
+  }
+    
+}

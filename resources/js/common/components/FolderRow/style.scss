@@ -1,0 +1,60 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color.scss";
+
+.folder-row-item {
+  margin: 10px 20px 15px 20px;
+  height: 48px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 5px 20px;
+  .folder-row-item-container{
+    .property-status-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 0;
+      min-height: 40px;
+      width: 100%;
+      svg {
+        min-width: 16px;
+      }
+      .property-status-title {
+        display: flex;
+        align-items: center;
+        word-break: break-all;
+        overflow-wrap: break-all;
+      }
+      .icon-container {
+        margin-left: 10px;
+        height: auto;
+      }
+      .property-status-selected {
+        color: $main-color;
+        font-weight: bold;
+        word-break: break-all;
+        overflow-wrap: break-all;
+      }
+      &.folder-edit-item {
+        input:focus {
+          outline: none;
+        }
+        .folder-edit-input {
+          flex: 1;
+          margin-left: 10px;
+          padding-right: 5px;
+          font-size: 16px;
+          color: $dark-color;
+          @include theme-aware('color', 'color-site-text');
+          @include theme-aware('background-color', 'color-site-background');
+          border: none;
+          &.selected {
+            margin-left: 0;
+            border: solid 1px $dark-border;
+            border-radius: 20px;
+            padding: 4px 3px 5px 26px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import "~theme/configs/color";
+@import "~theme/configs/mixins";
+
+.card-input-component {
+  .label {
+    font-size: rem(12);
+    font-weight: 600;
+    line-height: 1.17;
+    color: #333333;
+    margin-bottom: rem(10);
+  }
+  .input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: rem(52);
+    border-radius: rem(26);
+    box-shadow: 0 rem(3) rem(10) 0 rgba(0, 0, 0, 0.08);
+    background-color: $white-color;
+    color: $dark-color;
+    font-size: rem(16);
+    border: none;
+    outline: none;
+    padding-left: rem(54);
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: rem(18) center;
+    @include theme-aware('color', 'color-site-text');
+    @include theme-aware('background-color', 'color-site-background');
+  }
+}

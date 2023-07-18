@@ -1,0 +1,52 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color";
+
+.collapsable-container {
+  outline: none;
+  cursor: pointer;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  @include theme-aware('background-color', 'color-site-background');
+  @include theme-aware('color', 'color-site-text');
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 100%;
+  .Collapsible__trigger {
+    padding: 20px 20px;
+  }
+  .collapsable-trigger-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .trigger-title {
+      display: flex;
+      align-items: center;
+      color: $dark-color;
+      @include theme-aware('color', 'color-site-text');
+      .icon-container {
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        margin-left: 0;
+        .status-icon {
+          width: 10px;
+          height: 10px;
+          object-fit: contain;
+        }
+      }
+    }
+    svg {
+      @include theme-aware('color', 'color-site-text');
+    }
+  }
+  .Collapsible__contentInner {
+    padding: 5px 20px;
+  }
+}

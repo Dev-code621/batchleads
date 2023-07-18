@@ -1,0 +1,48 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color";
+@import "~theme/configs/variables";
+
+.form-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 5px 0 17px;
+  position: relative;
+  svg {
+    @include theme-aware('color', 'color-menu-text');
+  }
+  &__left {
+    display: flex;
+    .btn-back {
+      margin-top: 4px;
+      margin-right: 5px;
+      @include theme-aware('color', 'color-site-text');
+    }
+    .form-title {
+      width: #{$modalContentWidth - 40};
+      color: $dark-color;
+      @include theme-aware('color', 'color-site-text');
+      font-weight: 400;
+      font-size: rem(24);
+      padding: 0;
+      margin: 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      &>span {
+        color: $main-color;
+        margin-left: 5px;
+        font-weight: 600;
+      }
+    }
+  }
+  @media (min-width: 481px) and (max-width: 767px) {
+    width: 100%;
+  }
+  @media (min-width: 320px) and (max-width: 480px) {
+    width: 100%;
+  }
+}

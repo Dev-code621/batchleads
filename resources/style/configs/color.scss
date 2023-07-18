@@ -1,0 +1,87 @@
+
+$white-color: #ffffff;
+$off-white-color: #e5e5e5;
+$other-white-color: #d7d7d7;
+$black-color: #313131;
+$deep-black-color: #161616;
+$other-black-color: #494949;
+$gray-color: #8f8f8f;
+$light-gray-color: #AAAAAA;
+$dark-gray-color: #454545;
+$other-gray-color: #646464;
+$dim-gray-color: #5F5F5F;
+$blue-color: #3683bc;
+$dark-blue-color: #24356c;
+$light-blue-color:  #89B6D8;
+$other-blue-color: #0c7de3;
+$red-color: #f6775b;
+$green-color: #36bc74;
+$yellow-color: #FF9C07;
+$light-yellow-color: #e7dd00;
+$light-blue-color-1: #F3FAFF;
+$body-color: #9f9f9f;
+$main-bg-color: #f5f8f9;
+$gray-backgroud: #c3c3c3;
+$light-color: #e4e4e4;
+
+
+$themes: (
+  light: (
+      color-background: $white-color,
+      color-background-icon: $white-color,
+      color-background-icon-logo: $blue-color,
+      color-background-text-logo: $light-blue-color,
+      color-icon: $gray-color,
+      color-select-icon:  $white-color,
+      color-select-icon-bg: $light-blue-color,
+      color-menu-text: $dark-gray-color,
+      color-map-button: $black-color,
+      color-map-button-main: $blue-color,
+      color-map-button-bg: $white-color,
+      color-searchbar-bg: $white-color,
+      color-searchbar: $other-gray-color,
+      color-site-background: $white-color,
+      color-site-text: $deep-black-color,
+      color-right-panel-bg: $main-bg-color,
+      color-button-background: $white-color,
+      color-title: $dim-gray-color,
+  ),
+  dark: (
+      color-background: $black-color,
+      color-background-icon: $other-black-color,
+      color-background-icon-logo: $light-gray-color,
+      color-background-text-logo: $gray-color,
+      color-icon: $white-color,
+      color-select-icon: $blue-color,
+      color-select-icon-bg: $white-color,
+      color-menu-text: $white-color,
+      color-map-button: $white-color,
+      color-map-button-bg: $blue-color,
+      color-map-button-main: $white-color,
+      color-searchbar-bg: $gray-color,
+      color-searchbar: $white-color,
+      color-site-background: $dark-gray-color,
+      color-site-text: $white-color,
+      color-right-panel-bg: $dark-gray-color,
+      color-button-background:$gray-backgroud,
+      color-title: $white-color,
+  )
+);
+
+$mob-nav-color: $other-gray-color;
+$link-color: $other-white-color;
+$menu-text-color: $other-gray-color;
+$background-color: $white-color;
+$full-screen-container-bg: $off-white-color;
+
+// NEW COLOR SCHEMA
+$main-color: $blue-color;
+$danger-color: $red-color;
+$success-color: $green-color;
+$warning-color: $light-yellow-color;
+$infor-color: $light-blue-color;
+$dimgray-color: $dim-gray-color;
+$dark-color: $dark-gray-color;
+$dark-border: $gray-color;
+$gray-color-1: $dark-gray-color;
+$gray-light: $light-gray-color;

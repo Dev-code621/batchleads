@@ -1,0 +1,33 @@
+@import "~theme/configs/color";
+.how-it-works-step-container {
+  // display: flex;
+  // align-items: center;
+  // justify-content: flex-start;
+  // flex-direction: row;
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 207px;
+  .description {
+    margin-left: 16px;
+    font-family: 'Barlow';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: $dark-color;
+    text-align: left;
+    width: 184px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &.top {
+    position: relative;
+    top: -50px;
+    left: 50px;
+  }
+  &.bottom {
+    position: relative;
+    top: 50px;
+    left: 50px;
+  }
+}

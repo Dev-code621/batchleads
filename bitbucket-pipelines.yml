@@ -1,0 +1,14 @@
+# This is a sample build configuration for Javascript.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: atlassian/default-image:latest
+
+pipelines:
+  branches:
+    master:
+      - step:
+          script:
+            - echo "Production deploy started"
+            - cat ./deploy.sh | ssh ubuntu@batchdriven.com
+            - echo "Production deploy finished"

@@ -1,0 +1,41 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+.signup-page {
+  .panels-container {
+    .left-panel {
+      .decoration {
+        position: absolute;
+        top: 1rem;
+        left: 2rem;
+        height: 100%;
+        @media (max-width: 767px) {
+          left: 1rem;
+        }
+        @media (max-width: 360px) {
+          left: 0.5rem;
+        }
+        &::before {
+          content: '';
+          position: absolute;
+          width: 3px;
+          height: calc(100% - 37px - 1rem);
+          background: $main-color;
+          left: calc(50% - 2px);
+          top: 37px;
+        }
+      }
+
+      .login-form {
+        .input-container {
+          .input-component {
+            margin: 1.5rem 0;
+            &:last-child {
+              margin-bottom: 1.2rem;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

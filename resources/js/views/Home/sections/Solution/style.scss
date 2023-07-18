@@ -1,0 +1,183 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+@import "~theme/configs/variables";
+
+.solution-section {
+  .container {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+
+    .block {
+      &--text {
+        color: $dimgray-color;
+        width: 40%;
+        max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 5%;
+
+        p {
+          line-height: 1.5;
+        }
+
+        i {
+          font-weight: 600;
+
+          span {
+            color: $main-color;
+            margin-right: 5px;
+          }
+        }
+      }
+
+      &--image {
+        width: 60%;
+        max-width: 671px;
+        height: 617px;
+        background-image: url('~assets/images/features.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: center;
+
+        &___ornament-container {
+          width: 100%;
+          position: relative;
+        }
+
+        &__ornament {
+          position: absolute;
+          background-repeat: no-repeat;
+          background-size: contain;
+
+          &--4 {
+            width: 80%;
+            height: 100%;
+            background-image: url('~assets/images/features_ornament4.svg');
+            background-position: center;
+            top: 21px;
+            left: 105px;
+          }
+
+          &--1 {
+            width: 50%;
+            height: 200px;
+            background-image: url('~assets/images/features_ornament1.svg');
+            background-position: left bottom;
+            left: 34%;
+            bottom: 100px;
+
+            @media (max-width: 600px) {
+              bottom: 50px;
+              width: 60%;
+            }
+          }
+
+          &--2 {
+            width: 50%;
+            height: 150px;
+            background-image: url('~assets/images/features_ornament2.svg');
+            background-position: left center;
+            left: 48%;
+            bottom: -44px;
+
+            @media (max-width: 600px) {
+              width: 60%;
+              right: 0;
+              left: inherit;
+              bottom: -64px;
+            }
+          }
+
+          &--3 {
+            width: 50%;
+            height: 150px;
+            background-image: url('~assets/images/features_ornament3.svg');
+            background-position: left top;
+            left: 15%;
+            top: 70px;
+
+            @media (max-width: 600px) {
+              top: 40px;
+              width: 60%;
+            }
+          }
+        }
+
+      }
+
+      &__title {
+        font-size: rem(28);
+        font-weight: 600;
+        color: $main-color;
+        margin: rem(25) 0;
+
+      }
+    }
+
+  }
+
+  @media (max-width: 767px) {
+    .container {
+      flex-direction: column;
+
+      .block {
+        margin: rem(15) auto;
+        max-width: 100%;
+        width: 100%;
+
+        &__title {
+          text-align: center;
+        }
+
+        &--text {
+          order: 1;
+
+          &>a {
+            width: 100%;
+            text-align: center;
+          }
+
+          input {
+            margin: rem(15) auto !important;
+          }
+        }
+
+        &--image {
+          order: 2;
+          height: 500px;
+        }
+
+      }
+    }
+  }
+
+  @media (max-width: 600px) {
+    .container {
+      .block {
+        &--image {
+          height: 400px;
+        }
+
+        &__title {
+          font-size: rem(24);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 400px) {
+    .container {
+      .block {
+        &--image {
+          height: 300px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color.scss";
+.context-menu-container {
+  .context-menu-trigger {
+    position: relative;
+  }
+  .context-menu-items {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 198px;
+    border-radius: 6px;
+    padding: 5px 0;
+    background-color: white;
+    box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.16);
+    .context-menu-item {
+      padding: 10px 10px;
+      color: $dark-color;
+      @include theme-aware('color', 'color-site-text');
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      img {
+        margin-right: 5px;
+      }
+      &:hover {
+        background-color: $light-color;
+        color: $main-color;
+      }
+    }
+  }
+}

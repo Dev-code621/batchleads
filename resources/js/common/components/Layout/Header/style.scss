@@ -1,0 +1,187 @@
+@import "~theme/configs/color";
+@import "~theme/configs/mixins";
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // width: 20%;
+  padding-top: rem(28);
+  margin-left: rem(20);
+  .logo-text {
+    color: #0c7de3;
+    text-decoration: none;
+    // font-weight: 500;
+    // font-size: rem(36);
+    // line-height: rem(31);
+    height: 32px;
+    cursor: pointer;
+    img {
+      width: 290px;
+    }
+  }
+}
+
+.header-container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  z-index: 99;
+  height: 84px;
+  align-items: center;
+
+  @media  (max-width: 575px) {
+    height: 70px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    @media  (max-width: 575px) {
+      width: 100%;
+    }
+    .logo-container {
+      margin: 0;
+      padding: 0;
+      margin-left: 75px;
+      @media  (max-width: 575px) {
+        margin-left: 0;
+      }
+      .logo-text {
+        width: 200px;
+        @media  (max-width: 575px) {
+          width: 170px;
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .menu-container {
+      display: flex;
+      align-items: center;
+
+      .signup-button {
+        border: none;
+        padding: 10px 30px;
+        background: $main-color;
+        border-radius: 20px;
+        margin-left: 30px;
+        cursor: pointer;
+        color: $white-color;
+        font-size: rem(16);
+        transition: all .2s;
+        &:hover {
+          background-color: $light-blue-color;
+          color: white;
+          box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.16);
+        }
+      }
+
+      .menu-text {
+        color: $dark-color;
+        font-size: rem(18);
+        margin-left: rem(30);
+        padding: 10px 5px;
+        position: relative;
+        cursor: pointer;
+        &::after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          right: 50%;
+          height: 3px;
+          background-color: rgba(255, 255, 255, 0);
+          bottom: 0;
+          transition: all .2s;
+        }
+        &:hover, &.active {
+          &::after {
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.9);
+          }
+        }
+      }
+
+      @media (max-width: 1024px) {
+        display: none;
+      }
+    }
+  }
+
+  .mobile-menu {
+    z-index: 999;
+    display: none;
+    .hamburger{
+      outline: none;
+      .hamburger-box {
+        zoom: .7;
+        .hamburger-inner {
+          background-color: $main-color !important;
+          &::before, &::after {
+            background-color: $main-color !important;
+          }
+        }
+      }
+    }
+    @media (min-width: 481px) and (max-width: 767px) {
+      display: block;
+    }
+    @media (min-width: 320px) and (max-width: 480px) {
+      display: block;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      display: block;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+      display: block;
+    }
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+      background-color: $mob-nav-color !important;
+    }
+    .header-dropdown {
+      display: none;
+      position: absolute;
+      background-color: $background-color;
+      transition: all 0.5s;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+      left: 0;
+      &.show {
+        display: block;
+        overflow: hidden;
+        overflow-y: overlay;
+        -ms-overflow-y: auto;
+        height: calc(100vh - 70px);
+        @-moz-document url-prefix() {
+          overflow-y: auto;
+        }
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+      .menu-item {
+        font-size: rem(28);
+        line-height: rem(34);
+        text-align: right;
+        padding: rem(28) rem(24) 0 0;
+        a {
+          text-decoration: none;
+          @include theme-aware('color', 'color-site-text');
+          color: $dark-color;
+          text-transform: capitalize;
+          cursor: pointer;
+          &:hover, &.active {
+            color: $main-color;;
+          }
+        }
+      }
+    }
+  }
+
+}

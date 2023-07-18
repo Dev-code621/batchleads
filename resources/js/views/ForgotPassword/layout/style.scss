@@ -1,0 +1,13 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+.fp-page {
+  .panels-container {
+    .left-panel {
+      .login-form {
+        .input-container {
+          margin: 2rem 0 3rem;
+        }
+      }
+    }
+  }
+}

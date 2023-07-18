@@ -1,0 +1,24 @@
+@import "~theme/configs/mixins.scss";
+@import "~theme/configs/color";
+
+.template-selector-container {
+  width: 100%;
+  .template-selector {
+    height: 62px;
+    border-radius: 16px;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    @include theme-aware('background-color', 'color-site-background');
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    .template-label {
+      font-size: rem(12);
+      @include theme-aware('color', 'color-site-text');
+    }
+  }
+}

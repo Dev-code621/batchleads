@@ -1,0 +1,33 @@
+@import "~theme/configs/mixins";
+@import "~theme/configs/color";
+@import "~theme/configs/variables";
+
+.footer-section {
+  color: $dimgray-color;
+  font-size: rem(14);
+  text-align: center;
+  @media (max-width: 767px) {}
+  .footer-menu-container {
+    .footer-menu-links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      .footer-menu-item {
+        margin-left: 5px;
+        margin-right: 5px;
+        a {
+          color: #454545;
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+    }
+    .footer-social-links {
+      a {
+        margin-left: 6px;
+        margin-right: 6px;
+      }
+    }
+  }
+}
